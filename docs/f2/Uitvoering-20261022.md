@@ -10,6 +10,8 @@ Tien consumentencontracttests, TypeScript en productiebuild slagen. Vier echte s
 
 De afzonderlijke container is lokaal gebouwd en gestart als niet-root met alleenleesbaar bestandssysteem. Zonder stagingconfiguratie worden geen publicaties getoond; de healthresponse is minimaal. Deze containerproef ging vooraf aan de laatste CSP-wijziging; de definitieve container wordt opnieuw door CI gebouwd en getest. Er is geen serverdeploy verricht.
 
+De vervolgcontrole vereist een geslaagde eerste actuele toegangscheck voordat beschermde inhoud zichtbaar wordt. Een vijfde standalone-browsergeval bewijst dat de goedgekeurde response voor de geauthenticeerde tester aankomt, maar verborgen blijft met JavaScript uit of geblokkeerde scripts. Alle vijf gevallen slagen lokaal; de synthetische intrekking blijft ongeveer 20,9 seconden. De hoofdrelease uit PR1 is gemerged en haar kwaliteit/imagebouw zijn groen; deze gerichte aanscherping krijgt opnieuw een afzonderlijke review en build. Geen van beide is al op DEV gedeployed.
+
 Het CC-onderdeel staat afzonderlijk in PR114: beveiligde vrijgavebediening/API, exacte revisies, tijdvenster, intrekking, eindige testerbinding, private media en audit. Lokale CC-regressie en native PostgreSQL 17.11-/raceproeven slagen; CI-controles en release zijn afzonderlijk te volgen. Het eerdere F1-schema wordt nog steeds als tussenstand gecontroleerd.
 
 ## Live poorten die nog openstaan
