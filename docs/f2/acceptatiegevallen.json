@@ -1,0 +1,1053 @@
+{
+  "schema_version": "besc-f2-cases-v1",
+  "status": "planned_not_executed",
+  "cases": [
+    {
+      "id": "B01",
+      "package": "F2.0",
+      "title": "Baseline",
+      "level": "preflight",
+      "action": "Vergelijk actuele main, werkelijk draaiende CC-digest, historie/schema en F1-intrekkingen.",
+      "expected": "Geen onverklaarde afwijking; seed blijft uitgesloten.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ]
+    },
+    {
+      "id": "B02",
+      "package": "F2.0",
+      "title": "Toegang",
+      "level": "preflight",
+      "action": "Controleer SSH-hostfingerprint, taakrechten en DNS-beheersessie zonder geheimen te loggen.",
+      "expected": "Alle afhankelijke live toegang bewezen of stap blijft geblokkeerd.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ]
+    },
+    {
+      "id": "B03",
+      "package": "F2.0",
+      "title": "Testgroep",
+      "level": "preflight",
+      "action": "Bind crew/vrijwilligers aan actuele bestaande accounts; test oude/onbevestigde binding.",
+      "expected": "Alleen bevestigde actieve accounts in afgeschermde roster; geen CC-taakrol erbij.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ]
+    },
+    {
+      "id": "B04",
+      "package": "F2.0",
+      "title": "Resources",
+      "level": "preflight",
+      "action": "Inspecteer werkelijke proxy/netwerken, CPU/geheugen/schijf en poorten.",
+      "expected": "Veilige capaciteit en aparte upstream; geen tweede edge op 80/443.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ]
+    },
+    {
+      "id": "B05",
+      "package": "F2.0",
+      "title": "Bronnen",
+      "level": "preflight",
+      "action": "Vergelijk merkassets en contentinventaris met bron/rechten; geen bulkimport.",
+      "expected": "Onzekere rechten/feiten blokkeren hun inhoud, niet vervangen door verzinsels.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ]
+    },
+    {
+      "id": "B06",
+      "package": "F2.0",
+      "title": "Open F1",
+      "level": "preflight",
+      "action": "Registreer drie F1-openpunten en beoordeel afhankelijke F2-proeven.",
+      "expected": "Geen eerdere beperking stilzwijgend als geslaagd gemarkeerd.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ]
+    },
+    {
+      "id": "A01",
+      "package": "F2.3",
+      "title": "Anoniem",
+      "level": "isolated_and_live",
+      "action": "Vraag HTML, RSC, API, media, metadata, OG, prefetch en sitemap zonder sessie.",
+      "expected": "Geen inhoud, titels of privévelden; login/deny volgens contract.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "A02",
+      "package": "F2.3",
+      "title": "Niet toegelaten",
+      "level": "isolated_and_live",
+      "action": "Gebruik geldig bestaand account zonder rosterbinding.",
+      "expected": "403/veilige loginweergave; geen inhoud.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "A03",
+      "package": "F2.3",
+      "title": "Verkeerde organisatie",
+      "level": "isolated_and_live",
+      "action": "Gebruik toegelaten actor van een andere organisatie en gemanipuleerde sitevelden.",
+      "expected": "Geen cross-tenant lezen of schrijven.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "A04",
+      "package": "F2.3",
+      "title": "JWT",
+      "level": "isolated_and_live",
+      "action": "Probeer verlopen/vervalste JWT, metadata-rol en clientcookie als autoriteit.",
+      "expected": "Serververificatie weigert alle omwegen.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "A05",
+      "package": "F2.3",
+      "title": "Sleutel",
+      "level": "isolated_and_live",
+      "action": "Ontbrekende/verkeerde/geroteerde sitecredential plus geldige viewer.",
+      "expected": "Geen read; oude sleutel ongeldig; credential nooit client-side.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "A06",
+      "package": "F2.3",
+      "title": "Directe database",
+      "level": "isolated_and_live",
+      "action": "Roep read-RPC/tabellen/Storage rechtstreeks met anon en gewone authenticated aan.",
+      "expected": "Geen tabel/media-uitlek; RPC vereist actuele sitebinding.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "A07",
+      "package": "F2.3",
+      "title": "Intrekking lezer",
+      "level": "isolated_and_live",
+      "action": "Beëindig roster of accountstatus tijdens een actieve sessie.",
+      "expected": "Nieuwe reads geblokkeerd en actieve inhoud binnen 60 seconden weg.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "A08",
+      "package": "F2.3",
+      "title": "Cookies en redirect",
+      "level": "isolated_and_live",
+      "action": "Test callback naar andere host, openredirect en subdomaincookies.",
+      "expected": "Alleen exacte toegestane callback; host-only cookies; CC-sessie blijft werken.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "A09",
+      "package": "F2.3",
+      "title": "Lezer is geen redacteur",
+      "level": "isolated_and_live",
+      "action": "Laat toegelaten crew/vrijwilliger write/review/release uitvoeren.",
+      "expected": "Alle schrijfhandelingen geweigerd zonder actuele taakrol.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "A10",
+      "package": "F2.3",
+      "title": "Adminomweg",
+      "level": "isolated_and_live",
+      "action": "Test voorzitter/admin zonder publicatierol.",
+      "expected": "Geen concept/review/vrijgave via beheerdersomweg.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "P01",
+      "package": "F2.2",
+      "title": "Niet goedgekeurd",
+      "level": "postgres_and_live",
+      "action": "Probeer draft en in_review vrij te geven.",
+      "expected": "Geen pointer of publicatie; expliciet exact akkoord nodig.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P02",
+      "package": "F2.2",
+      "title": "Revisiebinding",
+      "level": "postgres_and_live",
+      "action": "Wijzig bron na submit en probeer oude in_review goed te keuren.",
+      "expected": "Conflict; niets nieuw vrijgegeven.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P03",
+      "package": "F2.2",
+      "title": "Oude snapshot",
+      "level": "postgres_and_live",
+      "action": "Maak nieuw concept bij actieve goedgekeurde snapshot.",
+      "expected": "Oude goedgekeurde snapshot blijft exact; nieuw concept erft geen akkoord.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P04",
+      "package": "F2.2",
+      "title": "Atomisch vervangen",
+      "level": "postgres_and_live",
+      "action": "Geef goedgekeurde revisie 2 vrij met expected epoch.",
+      "expected": "Zelfde public_id; exact nieuwe payload; geen half gemengde versie.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P05",
+      "package": "F2.2",
+      "title": "Dubbele aanvraag",
+      "level": "postgres_and_live",
+      "action": "Herhaal request-ID met dezelfde en daarna andere invoer.",
+      "expected": "Zelfde uitkomst voor gelijk; conflict voor gewijzigd; geen dubbele events.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P06",
+      "package": "F2.2",
+      "title": "Race intrekking",
+      "level": "postgres_and_live",
+      "action": "Race vertraagde publish/replay tegen intrekken en toestemming/media-intrekking.",
+      "expected": "Serialisatie met F1-lock; ingetrokken inhoud niet hersteld.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P07",
+      "package": "F2.2",
+      "title": "Race vervangen",
+      "level": "postgres_and_live",
+      "action": "Laat twee reviewers op dezelfde epoch vervangen.",
+      "expected": "Eén winnaar, één conflict; consistente audit.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P08",
+      "package": "F2.2",
+      "title": "Venster",
+      "level": "postgres_and_live",
+      "action": "Test vóór begin, exact begin/einde en ongeldige tijdsvolgorde.",
+      "expected": "Serverklok bepaalt; geen voortijdige of verlopen uitlevering.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P09",
+      "package": "F2.2",
+      "title": "Bronarchivering",
+      "level": "postgres_and_live",
+      "action": "Archiveer/verwijder bron terwijl pointer actief is.",
+      "expected": "Geen uitlevering; geen stille fallback naar oude revisie.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P10",
+      "package": "F2.2",
+      "title": "Toestemming",
+      "level": "postgres_and_live",
+      "action": "Trek noodzakelijke toestemming/doel in.",
+      "expected": "Centrale geldigheid weigert alle routes; geen nieuwe consent verzonnen.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P11",
+      "package": "F2.2",
+      "title": "Mediarechten",
+      "level": "postgres_and_live",
+      "action": "Trek rechtenbewijs van gebruikte afbeelding in.",
+      "expected": "Publicatie en bytes volgens geldigheidscontract geblokkeerd.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "P12",
+      "package": "F2.2",
+      "title": "Slug en ID",
+      "level": "postgres_and_live",
+      "action": "Probeer dubbele slug, verkeerd type/locale en private bron-ID als public_id.",
+      "expected": "Uniek en opaque; geen private ID in responses of cursors.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "D01",
+      "package": "F2.3",
+      "title": "Veldselectie",
+      "level": "contract",
+      "action": "Injecteer organisatie/contact/budget/contract/evidencevelden, ook genest.",
+      "expected": "Strikte afwijzing; geen spread van bronrecord.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "D02",
+      "package": "F2.3",
+      "title": "HTML",
+      "level": "contract",
+      "action": "Test script/events/unsafe href/iframe/form/trackingpixel en kapotte HTML.",
+      "expected": "Veilige parserallowlist; geen executable HTML.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "D03",
+      "package": "F2.3",
+      "title": "URL en SSRF",
+      "level": "contract",
+      "action": "Test localhost, IP/internal, signed Storage URL, redirects en javascript/data URLs.",
+      "expected": "Geen arbitrary fetch/private locator; alleen gecontroleerde paden en veilige registratie-URL.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "D04",
+      "package": "F2.3",
+      "title": "Pagination",
+      "level": "contract",
+      "action": "Test nul/negatief/te groot limit, gemanipuleerde cursor, andere site/type/locale.",
+      "expected": "400; stabiele begrensde reeks zonder private cursorgegevens.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "D05",
+      "package": "F2.3",
+      "title": "Taal en tijd",
+      "level": "contract",
+      "action": "Test onbekende locale, ongeldige RFC3339 en zomertijdweergave.",
+      "expected": "Weigering ongeldige data; Brusselsweergave correct; geen verzonnen vertaling.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "D06",
+      "package": "F2.3",
+      "title": "Niet beschikbaar",
+      "level": "contract",
+      "action": "Vraag onbekende, ingetrokken, niet vrijgegeven en verlopen slug.",
+      "expected": "Zelfde veilige 404; geen bestaansoracle.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "D07",
+      "package": "F2.3",
+      "title": "Afhankelijkheid",
+      "level": "contract",
+      "action": "Maak Auth/CC/DB tijdelijk onbereikbaar.",
+      "expected": "Geen oude inhoud; veilig 503/loginstate zonder geheime fout.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "D08",
+      "package": "F2.3",
+      "title": "Limieten",
+      "level": "contract",
+      "action": "Overvraag API en zeer grote payloads/bestanden.",
+      "expected": "Begrensd geheugen/tijd; 429/veilige validatiefout; CC blijft gezond.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ]
+    },
+    {
+      "id": "W01",
+      "package": "F2.5",
+      "title": "Schermen",
+      "level": "browser",
+      "action": "Doorloop home, lijsten, details, leeg/nietgevonden/storing en terugnavigatie.",
+      "expected": "Werkende nav/states; geen fictieve content of lege beloofde portalen.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ]
+    },
+    {
+      "id": "W02",
+      "package": "F2.5",
+      "title": "Licht en donker",
+      "level": "browser",
+      "action": "Review beide thema’s met werkelijke BESC-assets en fontfallback.",
+      "expected": "Leesbaar, consistent, geen logo-vervorming of onleesbare laadflits.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ]
+    },
+    {
+      "id": "W03",
+      "package": "F2.5",
+      "title": "Responsive",
+      "level": "browser",
+      "action": "Controleer 390/768/1440px en 320 CSS-px reflow.",
+      "expected": "Geen onbedoelde horizontale overflow of afgesneden bediening.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ]
+    },
+    {
+      "id": "W04",
+      "package": "F2.5",
+      "title": "Toetsenbord",
+      "level": "browser",
+      "action": "Gebruik skiplink, navigatie, thema, login en artikel-links zonder muis.",
+      "expected": "Logische focus, zichtbare focus, geen traps.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ]
+    },
+    {
+      "id": "W05",
+      "package": "F2.5",
+      "title": "Toegankelijkheid",
+      "level": "browser",
+      "action": "Combineer axe, contrastreview, headings, alt, zoom 200/400 en reduced motion.",
+      "expected": "Geen blokkerende bevinding; reviewbewijs naast scanner.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ]
+    },
+    {
+      "id": "W06",
+      "package": "F2.5",
+      "title": "Secrets",
+      "level": "browser",
+      "action": "Inspecteer browserbundles, source maps, logs en netwerk.",
+      "expected": "Geen sitekey, service_role, private IDs/broninhoud of credentials.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ]
+    },
+    {
+      "id": "W07",
+      "package": "F2.5",
+      "title": "Registratielink",
+      "level": "browser",
+      "action": "Controleer veilige externe eventlink en ontbrekende registratie.",
+      "expected": "Geen nepformulier; geen onveilig schema of onterecht succes.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ]
+    },
+    {
+      "id": "W08",
+      "package": "F2.5",
+      "title": "Bestaande koppelingen",
+      "level": "browser",
+      "action": "Test CC-login/Discord/Twitchbinding en ongewijzigde saldo-observatie waar bevoegd.",
+      "expected": "Geen regressie; geen botconfig, saldo of flags veranderd.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ]
+    },
+    {
+      "id": "M01",
+      "package": "F2.5",
+      "title": "Private bytes",
+      "level": "media",
+      "action": "Vraag bucketpad, guessed ID en media zonder geldige actieve publicatie.",
+      "expected": "Geen openbare Storage, signed URL of padlekkage.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "M02",
+      "package": "F2.5",
+      "title": "Uploadfixture",
+      "level": "media",
+      "action": "Test synthetische afbeelding plus MIME-spoofing, SVG, te groot bestand en metadata.",
+      "expected": "Alleen gecontroleerde derivative; grootte/type/rechten geborgd.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "M03",
+      "package": "F2.5",
+      "title": "Intrekken media",
+      "level": "media",
+      "action": "Trek mediarecht in met al geladen afbeelding en actieve stream.",
+      "expected": "Nieuwe requests onmiddellijk geweigerd; beheerde actieve view/stream ≤60s geblokkeerd.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "M04",
+      "package": "F2.5",
+      "title": "Optimizer",
+      "level": "media",
+      "action": "Vraag oude imageoptimizer/proxy/cached mediaroute aan.",
+      "expected": "Geen omweg naar ingetrokken bytes.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "C01",
+      "package": "F2.5",
+      "title": "Headers",
+      "level": "cache_and_live",
+      "action": "Meet HTML/API/media/metadata via edge en rechtstreeks intern.",
+      "expected": "private,no-store; geen ISR/CDN/SW-contentcache.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "C02",
+      "package": "F2.5",
+      "title": "Conditioneel",
+      "level": "cache_and_live",
+      "action": "Herhaal oude ETag/If-Modified-Since na intrekking.",
+      "expected": "Geen 304 of stale response; veilige 404/deny.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "C03",
+      "package": "F2.5",
+      "title": "Routercache",
+      "level": "cache_and_live",
+      "action": "Prefetch detail, trek in, navigeer via clientrouter en terugknop.",
+      "expected": "Geen oude inhoud vóór hercontrole.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "C04",
+      "package": "F2.5",
+      "title": "Actieve view",
+      "level": "cache_and_live",
+      "action": "Trek publicatie in bij geopende pagina; meet commit→verdwijnen.",
+      "expected": "≤60 seconden in normaal actieve browser, ook lijst/detail.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "C05",
+      "package": "F2.5",
+      "title": "Achtergrond",
+      "level": "cache_and_live",
+      "action": "Ga offline/achtergrond, trek in en keer terug met pageshow/focus.",
+      "expected": "Inhoud afgeschermd tot geslaagde actuele validatie.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "C06",
+      "package": "F2.5",
+      "title": "Storing",
+      "level": "cache_and_live",
+      "action": "Breek hercontrole van open pagina.",
+      "expected": "Binnen begrensde controleperiode inhoud weg; geen stale fallback.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "C07",
+      "package": "F2.5",
+      "title": "Alle routes",
+      "level": "cache_and_live",
+      "action": "Meet intrekking vanaf commit voor lijst/detail/media en controleer sitemap/OG.",
+      "expected": "Alle beheerde paden binnen60s; sitemap/OG blijven afgeschermd.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "C08",
+      "package": "F2.5",
+      "title": "Perioden",
+      "level": "cache_and_live",
+      "action": "Laat een ingepland venster aflopen zonder Cron/deploy.",
+      "expected": "Serverreads en actieve view stoppen op geldigheid binnen SLA.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ]
+    },
+    {
+      "id": "R01",
+      "package": "F2.7",
+      "title": "Back-up",
+      "level": "release_live",
+      "action": "Controleer actuele exportchecksums, off-server kopie, Storage en geïsoleerd herstel.",
+      "expected": "Herstel aantoonbaar vóór migratie; geen dump/secret in Git.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ]
+    },
+    {
+      "id": "R02",
+      "package": "F2.7",
+      "title": "Migraties",
+      "level": "release_live",
+      "action": "Vergelijk verse/upgrade-repetitie en exacte live SQL/hashes.",
+      "expected": "Historie volgens manifest; oude123 behouden; seed niet toegevoegd.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ]
+    },
+    {
+      "id": "R03",
+      "package": "F2.7",
+      "title": "Postcommit",
+      "level": "release_live",
+      "action": "Vergelijk schema/grants/rijen/audit na uitvoering.",
+      "expected": "Alleen bedoelde additieve wijziging; fout wordt geïnspecteerd, niet blind herhaald.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ]
+    },
+    {
+      "id": "R04",
+      "package": "F2.7",
+      "title": "Proxy en DNS",
+      "level": "release_live",
+      "action": "Valideer deny-all vóór DNS, stagingrecord/TLS, Caddyreload en oude CC-host.",
+      "expected": "Alleen nieuwe staginghost; CC bereikbaar; mail/hoofdsite intact.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ]
+    },
+    {
+      "id": "R05",
+      "package": "F2.7",
+      "title": "Images",
+      "level": "release_live",
+      "action": "Noteer werkelijk draaiende afzonderlijke digests en gezondheid.",
+      "expected": "Match met beoordeelde builds; geen mutable-tagaanname.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ]
+    },
+    {
+      "id": "R06",
+      "package": "F2.7",
+      "title": "Terugval",
+      "level": "release_live",
+      "action": "Zet vorige website- en CC-image gecontroleerd terug en daarna naar geteste versie.",
+      "expected": "Beide werken met additief schema; audit behouden; site dicht tijdens onveilige overgang.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ]
+    },
+    {
+      "id": "R07",
+      "package": "F2.7",
+      "title": "Flags",
+      "level": "release_live",
+      "action": "Lees alleen booleans van afgesproken flags en scopeclientgrenzen.",
+      "expected": "Vier bestaande functies uit; Twitch aan; geen botclientwijziging.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ]
+    },
+    {
+      "id": "R08",
+      "package": "F2.7",
+      "title": "Opruiming",
+      "level": "release_live",
+      "action": "Trek testpublicaties/rollen in en lees actuele grants/audit terug.",
+      "expected": "Geen tijdelijke publicatierollen of uitleverbare fixtures achtergebleven.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ]
+    },
+    {
+      "id": "E01",
+      "package": "F2.7",
+      "title": "Nieuwsketen",
+      "level": "end_to_end_live",
+      "action": "Maak TESTFIXTURE-nieuws, submit/review/release, lees als tester, rev2, vervang, trek in.",
+      "expected": "Alle stappen exact/auditbaar; private data weg; intrekking≤60s.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.4",
+        "F2.7"
+      ]
+    },
+    {
+      "id": "E02",
+      "package": "F2.7",
+      "title": "Eventketen",
+      "level": "end_to_end_live",
+      "action": "Herhaal volledige keten voor event met datum/locatie en beheerde testafbeelding.",
+      "expected": "Zelfde rechten/revisiegaranties; event/media-intrekking bewezen.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.4",
+        "F2.7"
+      ]
+    },
+    {
+      "id": "E03",
+      "package": "F2.7",
+      "title": "Tweede tester",
+      "level": "end_to_end_live",
+      "action": "Lees met één werkelijk aangewezen crew/vrijwilligersaccount zonder taakrollen.",
+      "expected": "Alleen websiteprojectie leesbaar; CC-write geblokkeerd.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.4",
+        "F2.7"
+      ]
+    },
+    {
+      "id": "E04",
+      "package": "F2.7",
+      "title": "Afsluiting",
+      "level": "end_to_end_live",
+      "action": "Koppel alle gevallen aan resultaat/bewijslaag en rapporteer resterende F1/F2-varianten.",
+      "expected": "Geen planned als passed; menselijke acceptatie expliciet.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.4",
+        "F2.7"
+      ]
+    },
+    {
+      "id": "Q01",
+      "package": "F2.6",
+      "covers_packages": [
+        "F2.6"
+      ],
+      "title": "Gezamenlijke CI en containerproef",
+      "level": "ci_and_container",
+      "action": "Bouw beide vastgepinde repos met frozen lockfile; voer lint/types, relevante CC-regressie, native SQL/concurrency en producent/consument/container-e2e uit.",
+      "expected": "Alle vereiste controles groen op de te releasen commits; beide images reproduceerbaar en aan exacte digests gekoppeld.",
+      "status": "planned",
+      "actual_result": null,
+      "evidence_ref": null,
+      "release_blocking": true
+    }
+  ]
+}

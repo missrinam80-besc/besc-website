@@ -1,0 +1,230 @@
+{
+  "warning": "TESTFIXTURE — NIET PUBLICEREN; shape validation only, not authorization/HTML/URL proof",
+  "fixtures": [
+    {
+      "id": "news-positive",
+      "schema": "news",
+      "expected_valid": true,
+      "payload": {
+        "schema_version": "besc-website-publication-v1",
+        "type": "news",
+        "public_id": "00000000-0000-4000-8000-000000000101",
+        "revision": 1,
+        "slug": "testfixture-nieuws",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — nieuws F2",
+        "summary": "Uitsluitend afgeschermde DEV-proef.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN</p>"
+        },
+        "media": [],
+        "published_at": "2030-01-01T10:00:00Z"
+      }
+    },
+    {
+      "id": "event-positive",
+      "schema": "event",
+      "expected_valid": true,
+      "payload": {
+        "schema_version": "besc-website-publication-v1",
+        "type": "event",
+        "public_id": "00000000-0000-4000-8000-000000000102",
+        "revision": 1,
+        "slug": "testfixture-event",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — event F2",
+        "summary": "Uitsluitend afgeschermde DEV-proef.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN</p>"
+        },
+        "media": [
+          {
+            "public_media_id": "00000000-0000-4000-8000-000000000103",
+            "alt": "TESTFIXTURE — synthetische afbeelding",
+            "credit": "TESTFIXTURE"
+          }
+        ],
+        "published_at": "2030-01-01T10:00:00Z",
+        "starts_at": "2030-01-01T12:00:00Z",
+        "ends_at": "2030-01-01T13:00:00Z",
+        "timezone": "Europe/Brussels",
+        "location_label": "TESTFIXTURE — geen echt event",
+        "registration_url": null
+      }
+    },
+    {
+      "id": "private-field",
+      "schema": "news",
+      "expected_valid": false,
+      "payload": {
+        "schema_version": "besc-website-publication-v1",
+        "type": "news",
+        "public_id": "00000000-0000-4000-8000-000000000101",
+        "revision": 1,
+        "slug": "testfixture-nieuws",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — nieuws F2",
+        "summary": "Uitsluitend afgeschermde DEV-proef.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN</p>"
+        },
+        "media": [],
+        "published_at": "2030-01-01T10:00:00Z",
+        "source_id": "private"
+      }
+    },
+    {
+      "id": "nested-private-field",
+      "schema": "news",
+      "expected_valid": false,
+      "payload": {
+        "schema_version": "besc-website-publication-v1",
+        "type": "news",
+        "public_id": "00000000-0000-4000-8000-000000000101",
+        "revision": 1,
+        "slug": "testfixture-nieuws",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — nieuws F2",
+        "summary": "Uitsluitend afgeschermde DEV-proef.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN</p>",
+          "review_note": "private"
+        },
+        "media": [],
+        "published_at": "2030-01-01T10:00:00Z"
+      }
+    },
+    {
+      "id": "unapproved-type",
+      "schema": "news",
+      "expected_valid": false,
+      "payload": {
+        "schema_version": "besc-website-publication-v1",
+        "type": "partner",
+        "public_id": "00000000-0000-4000-8000-000000000101",
+        "revision": 1,
+        "slug": "testfixture-nieuws",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — nieuws F2",
+        "summary": "Uitsluitend afgeschermde DEV-proef.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN</p>"
+        },
+        "media": [],
+        "published_at": "2030-01-01T10:00:00Z"
+      }
+    },
+    {
+      "id": "zero-revision",
+      "schema": "news",
+      "expected_valid": false,
+      "payload": {
+        "schema_version": "besc-website-publication-v1",
+        "type": "news",
+        "public_id": "00000000-0000-4000-8000-000000000101",
+        "revision": 0,
+        "slug": "testfixture-nieuws",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — nieuws F2",
+        "summary": "Uitsluitend afgeschermde DEV-proef.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN</p>"
+        },
+        "media": [],
+        "published_at": "2030-01-01T10:00:00Z"
+      }
+    },
+    {
+      "id": "invalid-locale",
+      "schema": "news",
+      "expected_valid": false,
+      "payload": {
+        "schema_version": "besc-website-publication-v1",
+        "type": "news",
+        "public_id": "00000000-0000-4000-8000-000000000101",
+        "revision": 1,
+        "slug": "testfixture-nieuws",
+        "locale": "xx",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — nieuws F2",
+        "summary": "Uitsluitend afgeschermde DEV-proef.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN</p>"
+        },
+        "media": [],
+        "published_at": "2030-01-01T10:00:00Z"
+      }
+    },
+    {
+      "id": "private-media-locator",
+      "schema": "event",
+      "expected_valid": false,
+      "payload": {
+        "schema_version": "besc-website-publication-v1",
+        "type": "event",
+        "public_id": "00000000-0000-4000-8000-000000000102",
+        "revision": 1,
+        "slug": "testfixture-event",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — event F2",
+        "summary": "Uitsluitend afgeschermde DEV-proef.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN</p>"
+        },
+        "media": [
+          {
+            "public_media_id": "00000000-0000-4000-8000-000000000103",
+            "alt": "TESTFIXTURE — synthetische afbeelding",
+            "credit": "TESTFIXTURE",
+            "url": "https://example.invalid/private/token"
+          }
+        ],
+        "published_at": "2030-01-01T10:00:00Z",
+        "starts_at": "2030-01-01T12:00:00Z",
+        "ends_at": "2030-01-01T13:00:00Z",
+        "timezone": "Europe/Brussels",
+        "location_label": "TESTFIXTURE — geen echt event",
+        "registration_url": null
+      }
+    },
+    {
+      "id": "invalid-date",
+      "schema": "event",
+      "expected_valid": false,
+      "payload": {
+        "schema_version": "besc-website-publication-v1",
+        "type": "event",
+        "public_id": "00000000-0000-4000-8000-000000000102",
+        "revision": 1,
+        "slug": "testfixture-event",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — event F2",
+        "summary": "Uitsluitend afgeschermde DEV-proef.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN</p>"
+        },
+        "media": [
+          {
+            "public_media_id": "00000000-0000-4000-8000-000000000103",
+            "alt": "TESTFIXTURE — synthetische afbeelding",
+            "credit": "TESTFIXTURE"
+          }
+        ],
+        "published_at": "2030-01-01T10:00:00Z",
+        "starts_at": "unknown",
+        "ends_at": "2030-01-01T13:00:00Z",
+        "timezone": "Europe/Brussels",
+        "location_label": "TESTFIXTURE — geen echt event",
+        "registration_url": null
+      }
+    }
+  ]
+}

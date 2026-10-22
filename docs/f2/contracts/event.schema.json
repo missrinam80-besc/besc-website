@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.belgianstreamerscommunity.be/f2/event.schema.json",
+  "title": "Proposed F2 event response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "type",
+    "public_id",
+    "revision",
+    "slug",
+    "locale",
+    "title",
+    "summary",
+    "body",
+    "media",
+    "published_at",
+    "starts_at",
+    "ends_at",
+    "timezone",
+    "location_label",
+    "registration_url"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "besc-website-publication-v1"
+    },
+    "type": {
+      "const": "event"
+    },
+    "public_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 160
+    },
+    "locale": {
+      "enum": [
+        "nl-BE",
+        "fr-BE",
+        "en"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 240
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "body": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "value"
+      ],
+      "properties": {
+        "format": {
+          "const": "sanitized_html"
+        },
+        "value": {
+          "type": "string",
+          "maxLength": 32000
+        }
+      }
+    },
+    "media": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "public_media_id",
+          "alt",
+          "credit"
+        ],
+        "properties": {
+          "public_media_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 500
+          },
+          "credit": {
+            "type": "string",
+            "maxLength": 500
+          }
+        }
+      }
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "starts_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ends_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "const": "Europe/Brussels"
+    },
+    "location_label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "registration_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^https://",
+      "maxLength": 2000
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": "besc-f2-preparation-v1",
+  "prepared_on": "2026-10-22",
+  "status": "prepared_for_review",
+  "execution_approved": false,
+  "live_changes": false,
+  "cc_baseline_commit": "e38adfd5704ba0fbf553f04564f1a5a646bcd50d",
+  "cloud_history_reference": 123,
+  "cloud_history_currently_rechecked": false,
+  "excluded_seed": "20261001110000",
+  "host": "website-dev.belgianstreamerscommunity.be",
+  "server": "BESCSRVDEV",
+  "dns_provider": "one.com",
+  "website_directory": "/opt/besc-dev/website",
+  "proposed_private_repo": "missrinam80-besc/besc-website",
+  "website_repo_created": true,
+  "tester_groups_confirmed": [
+    "crew",
+    "vrijwilligers"
+  ],
+  "tester_roster_verified": false,
+  "ssh_verified": false,
+  "dns_access_verified": false,
+  "proposed_withdrawal_sla_seconds": 60,
+  "contract_version": "besc-website-publication-v1",
+  "packages": [
+    {
+      "id": "F2.0",
+      "depends_on": []
+    },
+    {
+      "id": "F2.1",
+      "depends_on": [
+        "F2.0"
+      ]
+    },
+    {
+      "id": "F2.2",
+      "depends_on": [
+        "F2.0"
+      ]
+    },
+    {
+      "id": "F2.3",
+      "depends_on": [
+        "F2.2"
+      ]
+    },
+    {
+      "id": "F2.4",
+      "depends_on": [
+        "F2.2",
+        "F2.3"
+      ]
+    },
+    {
+      "id": "F2.5",
+      "depends_on": [
+        "F2.1",
+        "F2.3",
+        "F2.4"
+      ]
+    },
+    {
+      "id": "F2.6",
+      "depends_on": [
+        "F2.1",
+        "F2.2",
+        "F2.3",
+        "F2.4",
+        "F2.5"
+      ]
+    },
+    {
+      "id": "F2.7",
+      "depends_on": [
+        "F2.0",
+        "F2.6"
+      ]
+    }
+  ],
+  "proposed_flags": {
+    "BESC_PUBLICATION_STAGING_ENABLED": false,
+    "BESC_WEBSITE_STAGING_ENABLED": false
+  },
+  "preserved_flags": {
+    "BESC_REWARDS_ACTIVITY_ENABLED": false,
+    "BESC_REWARDS_PREVIEW_ENABLED": false,
+    "BESC_REWARDS_INTAKE_ENABLED": false,
+    "BESC_SLOT_DISCORD_NOTIFICATIONS_ENABLED": false,
+    "BESC_TWITCH_IDENTITY_LINKING_ENABLED": true
+  },
+  "prerequisites": [
+    "explicit_execution_approval",
+    "verified_ssh_host_and_access",
+    "verified_one_com_session",
+    "verified_existing_tester_accounts",
+    "fresh_cloud_baseline",
+    "backup_off_server_and_restore",
+    "reviewed_exact_migration_hashes",
+    "all_required_ci_checks"
+  ],
+  "f1_open_items": [
+    "additional_live_role_variants",
+    "confidential_export_notification_chain",
+    "previous_server_image_restore"
+  ],
+  "excluded": [
+    "production_cutover",
+    "apex_www_mail_dns_changes",
+    "bot_deployment",
+    "balance_transfer",
+    "automatic_rewards",
+    "full_content_migration",
+    "paid_services"
+  ],
+  "website_repo_verified_private": true,
+  "repository_url": "https://github.com/missrinam80-besc/besc-website"
+}

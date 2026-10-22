@@ -1,0 +1,74 @@
+[
+  {
+    "id": "masterplan_docx",
+    "path": "C:\\Users\\linda\\Downloads\\BESC_Ecosysteem_Masterplan_v2_Governance_Social_Campaign_Intelligence.docx",
+    "kind": "user_direction",
+    "read_on": "2026-10-22",
+    "sha256": "31ff61aee26e9cc9242597e99cbf562610ed147f397adaf956aedab17021a721",
+    "bytes": 58753
+  },
+  {
+    "id": "masterplan_extract",
+    "path": "C:\\Users\\linda\\.codex\\.chatgpt-projects\\g-p-6a6ca58cef848191830b4ceb549273c7\\work\\masterplan-fitgap-20261020\\source-extracted.txt",
+    "kind": "reference_extract",
+    "read_on": "2026-10-22",
+    "sha256": "9633f180572e0d913a8cc55c9c41faf20a03a7fe4b35caf444a097f63ecbcf5b",
+    "bytes": 46426
+  },
+  {
+    "id": "phase_fitgap",
+    "path": "C:\\Users\\linda\\.codex\\.chatgpt-projects\\g-p-6a6ca58cef848191830b4ceb549273c7\\work\\masterplan-fitgap-20261020\\BESC_Masterplan_Toetsing_en_Traject_20261020.md",
+    "kind": "phase_scope",
+    "read_on": "2026-10-22",
+    "sha256": "1f70c4e04473c510193224d7681f68486444ab921a106708833b64fc87bf9665",
+    "bytes": 24710
+  },
+  {
+    "id": "website_scope",
+    "path": "D:\\CODING\\besc-website\\docs\\scope.md",
+    "kind": "historical_scope",
+    "read_on": "2026-10-22",
+    "sha256": "e9e84ed046a91b5ee9393d9a5c1e7708b19d656130ad182f37927a146cef101c",
+    "bytes": 15230
+  },
+  {
+    "id": "website_style",
+    "path": "D:\\CODING\\besc-website\\docs\\stijlgids.md",
+    "kind": "style_reference",
+    "read_on": "2026-10-22",
+    "sha256": "7bd054e44829b0dd0d2d7d9da920d17f0f2c21a8597e689076eb27e6ebcad35c",
+    "bytes": 12522
+  },
+  {
+    "id": "website_inventory",
+    "path": "D:\\CODING\\besc-website\\website-inhoud-2026-10-03\\inventaris.md",
+    "kind": "snapshot_2026_10_03",
+    "read_on": "2026-10-22",
+    "sha256": "a4d4e6ae3053e4d4a6c868fe860371dab6a6eb58b071a4e6bf5538150ec47458",
+    "bytes": 32588
+  },
+  {
+    "id": "f1_publication",
+    "path": "C:\\Users\\linda\\.codex\\.chatgpt-projects\\g-p-6a6ca58cef848191830b4ceb549273c7\\work\\ecosystem-foundation-f01\\supabase\\migrations\\20261021124323_f1_publication_revisions.sql",
+    "kind": "current_code_baseline",
+    "read_on": "2026-10-22",
+    "sha256": "b6171f8a2975637cb5c0101a16b407b541c79765e66e8dd08054319bf5cac925",
+    "bytes": 19055
+  },
+  {
+    "id": "f1_contract",
+    "path": "C:\\Users\\linda\\.codex\\.chatgpt-projects\\g-p-6a6ca58cef848191830b4ceb549273c7\\work\\ecosystem-foundation-f01\\tests\\fixtures\\f1-publication-contract.json",
+    "kind": "current_code_baseline",
+    "read_on": "2026-10-22",
+    "sha256": "a0e47c6cc94c159bd7d4a31ef2f87e5c07fb731244849d92a3e83b8b3103244f",
+    "bytes": 950
+  },
+  {
+    "id": "f1_acceptance",
+    "path": "C:\\Users\\linda\\.codex\\.chatgpt-projects\\g-p-6a6ca58cef848191830b4ceb549273c7\\work\\ecosystem-foundation-f01\\docs\\acceptatie\\F1-DEV-20261022.md",
+    "kind": "historical_report_plus_later_user_confirmation",
+    "read_on": "2026-10-22",
+    "sha256": "10aede0384a686c8513efb9d39f37475b6e0f610e9e11566e241be5edc88a220",
+    "bytes": 7902
+  }
+]

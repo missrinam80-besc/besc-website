@@ -1,0 +1,14 @@
+{
+  "schema_version": "besc-f2-approval-v1",
+  "approved": false,
+  "approved_by": null,
+  "approved_at": null,
+  "approval_evidence": null,
+  "scope_document": "Uitvoeringsmandaat.md",
+  "unresolved_access": [
+    "SSH niet bevestigd",
+    "one.com-sessie niet gecontroleerd",
+    "Concrete crew-/vrijwilligersaccountbinding niet gecontroleerd"
+  ],
+  "note": "Dit formulier registreert geen akkoord door aanwezigheid van het bestand; alleen een expliciet menselijk besluit telt."
+}
