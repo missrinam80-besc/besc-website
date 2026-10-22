@@ -1,0 +1,7 @@
+# Add only after inspecting the actual BESCSRVDEV Caddy configuration.
+# Preserve all existing CC hosts/settings. Do not replace the full Caddyfile.
+website-dev.belgianstreamerscommunity.be {
+    encode zstd gzip
+    header X-Robots-Tag "noindex, nofollow"
+    reverse_proxy besc-website-staging:3000
+}

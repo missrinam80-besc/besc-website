@@ -1,8 +1,8 @@
 {
   "schema_version": "besc-f2-preparation-v1",
   "prepared_on": "2026-10-22",
-  "status": "prepared_for_review",
-  "execution_approved": false,
+  "status": "execution_in_progress",
+  "execution_approved": true,
   "live_changes": false,
   "cc_baseline_commit": "e38adfd5704ba0fbf553f04564f1a5a646bcd50d",
   "cloud_history_reference": 123,
@@ -115,5 +115,6 @@
     "paid_services"
   ],
   "website_repo_verified_private": true,
-  "repository_url": "https://github.com/missrinam80-besc/besc-website"
+  "repository_url": "https://github.com/missrinam80-besc/besc-website",
+  "server_execution_mode": "user_termius"
 }

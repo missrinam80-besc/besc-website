@@ -1,9 +1,9 @@
 {
   "schema_version": "besc-f2-approval-v1",
-  "approved": false,
-  "approved_by": null,
-  "approved_at": null,
-  "approval_evidence": null,
+  "approved": true,
+  "approved_by": "Linda",
+  "approved_at": "2026-10-22",
+  "approval_evidence": "Direct chat: ok je krijgt van mij de volledige toestemming om F2 uit te voeren; serverstappen later zelf via Termius.",
   "scope_document": "Uitvoeringsmandaat.md",
   "unresolved_access": [
     "SSH niet bevestigd",

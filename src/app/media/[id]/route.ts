@@ -1,0 +1,4 @@
+import {content,ContentFailure} from '@/lib/content';
+export const dynamic='force-dynamic';
+const headers={'Cache-Control':'private, no-store, max-age=0','X-Robots-Tag':'noindex, nofollow','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'none'; sandbox"};
+export async function GET(_request:Request,{params}:{params:Promise<{id:string}>}){const {id}=await params;if(!/^[a-f0-9-]{36}$/i.test(id))return new Response(null,{status:404,headers});try{const data=await content('media/'+id);if(!('bytes'in data)||!['image/png','image/webp'].includes(data.mime))throw new ContentFailure(503);return new Response(new Uint8Array(data.bytes),{headers:{...headers,'Content-Type':data.mime}});}catch(e){if(!(e instanceof ContentFailure))throw e;return new Response(null,{status:e.status,headers});}}

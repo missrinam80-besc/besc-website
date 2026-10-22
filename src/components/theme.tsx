@@ -1,0 +1,3 @@
+'use client';
+import {useEffect,useState} from 'react';
+export function Theme(){const [dark,setDark]=useState(false);useEffect(()=>{let stored:string|null=null;try{stored=localStorage.getItem('besc-theme');}catch{}const value=stored?stored==='dark':matchMedia('(prefers-color-scheme: dark)').matches;setDark(value);document.documentElement.dataset.theme=value?'dark':'light';},[]);return <button className="quiet" aria-label="Donkere weergave" aria-pressed={dark} onClick={()=>{const value=!dark;setDark(value);document.documentElement.dataset.theme=value?'dark':'light';try{localStorage.setItem('besc-theme',value?'dark':'light');}catch{}}}>{dark?'Licht':'Donker'}</button>;}
