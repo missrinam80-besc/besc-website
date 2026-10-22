@@ -1,3 +1,5 @@
+> Actuele status: Linda heeft uitvoering goedgekeurd. Zie [uitvoeringsverslag](Uitvoering-20261022.md) voor bouwbewijs en de resterende live stappen. De oorspronkelijke voorbereiding hieronder blijft als scopebasis herkenbaar.
+
 # F2 — eerste websiteketen: voorbereidingspakket
 
 **Status: voorbereid ter goedkeuring, niet uitgevoerd.** Datum: 22 oktober 2026. Dit pakket bevat de afgebakende opdracht, contracten, werkvolgorde, acceptatieproeven en het voorgestelde uitvoeringsmandaat. Het bevat geen werkende website of migratie-SQL. De pakketcontrole bewijst alleen de samenhang van de voorbereiding.

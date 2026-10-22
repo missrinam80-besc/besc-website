@@ -1,0 +1,43 @@
+name: Websitekwaliteit
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  website:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm build
+      - run: pnpm typecheck
+      - run: pnpm exec playwright install --with-deps chromium
+      - name: Geisoleerde standalone browsertests met fictieve Auth en CC
+        run: pnpm test:e2e
+        env:
+          F2_FIXTURE_STATE: ${{ runner.temp }}/f2-fixture-state.json
+      - name: Alleen synthetische browserbewijzen bewaren
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: f2-browser-tests
+          path: test-results/
+          retention-days: 7
+      - name: Container bouwen
+        run: docker build -t besc-website:ci .
+      - name: Afgeschermde standaardinstelling controleren
+        run: |
+          docker run -d --name f2-website-ci -p 127.0.0.1:3302:3000 besc-website:ci
+          for n in $(seq 1 30); do curl -fsS http://127.0.0.1:3302/api/health && break || sleep 1; done
+          test "$(curl -s -o /tmp/f2-body -w '%{http_code}' http://127.0.0.1:3302/)" = '200'
+          ! grep -q 'TESTFIXTURE' /tmp/f2-body
+          docker stop f2-website-ci

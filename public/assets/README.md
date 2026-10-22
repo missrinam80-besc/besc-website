@@ -1,0 +1,1 @@
+Bestaande BESC-logo-preview uit de websitevoorbereiding; geen hertekening. Alleen afgeschermde DEV-proef. Officiële merkmasters/rechtencontrole blijven vereist vóór publieke uitrol. Fonts worden met hun OFL-licentie zelf gehost.
