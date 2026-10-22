@@ -31,3 +31,11 @@ test('vervallen toegang en upstreamfout leveren geen oude inhoud terug',async({p
  state({denied:true});await page.goto('/nieuws');await expect(page.getByRole('heading',{name:'Je account heeft nog geen testtoegang'})).toBeVisible();expect(await page.content()).not.toContain('TESTFIXTURE — NIET PUBLICEREN');
  state({unavailable:true});await page.goto('/nieuws');await expect(page.getByRole('heading',{name:'Even niet beschikbaar'})).toBeVisible();expect(await page.content()).not.toContain('TESTFIXTURE — NIET PUBLICEREN');
 });
+test('zonder JavaScript of bij ontbrekende scripts blijft beschermde inhoud verborgen',async({browser})=>{
+ for(const js of [false,true]){
+  const context=await browser.newContext({javaScriptEnabled:js});await context.addCookies([{name:'besc-website-auth',value:session(),domain:'127.0.0.1',path:'/',httpOnly:true,sameSite:'Lax'}]);
+  const page=await context.newPage();if(js)await page.route('**/_next/static/**/*.js',route=>route.abort());
+  const response=await page.goto('http://127.0.0.1:3301/nieuws/testfixture-nieuws');expect(await response!.text()).toContain('TESTFIXTURE — NIET PUBLICEREN — nieuws F2');await expect(page.locator('.protected-content')).toHaveCount(1);await expect(page.locator('.protected-content')).toBeHidden();
+  await expect(page.getByText('De actuele inhoud wordt gecontroleerd.')).toBeVisible();await context.close();
+ }
+});
