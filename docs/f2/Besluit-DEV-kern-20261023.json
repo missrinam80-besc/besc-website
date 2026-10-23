@@ -1,0 +1,14 @@
+{
+  "decision": "accepted_dev_core_with_open_variants",
+  "decision_maker": "Linda Heremans, voorzitter",
+  "source": "Expliciet antwoord van de gebruiker in deze chat op de formele F2-afsluitvraag",
+  "decision_date": "2026-10-23",
+  "recorded_at_utc": "2026-10-23T08:41:11.496240+00:00",
+  "verbatim_answer": "De bewezen DEV-kern accepteren; genoemde varianten afzonderlijk open houden",
+  "scope": "proven_dev_core",
+  "full_matrix_accepted": false,
+  "partial_cases_remain_open": 38,
+  "consent_case_skipped_by_user": "P10",
+  "production_release_authorized": false,
+  "f1_open_variants_unchanged": true
+}

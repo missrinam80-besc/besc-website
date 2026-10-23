@@ -1,4 +1,4 @@
-> Actuele status: de afgeschermde DEV-kern is uitgevoerd en na de proeven gesloten. Zie [uitvoerings- en sluitingsbewijs van 23 oktober](Uitvoering-20261023.md) en [alle 69 resultaatgevallen](acceptatiebewijs-20261023.json). Menselijke eindacceptatie en expliciet resterende varianten staan open. De oorspronkelijke voorbereiding hieronder blijft als scopebasis herkenbaar.
+> Actuele status: de afgeschermde DEV-kern is uitgevoerd en na de proeven gesloten. Zie [uitvoerings- en sluitingsbewijs van 23 oktober](Uitvoering-20261023.md) en [alle 69 resultaatgevallen](acceptatiebewijs-20261023.json). Linda heeft op 23 oktober 2026 de bewezen DEV-kern aanvaard; F2 is voor die kern afgesloten. De 38 gedeeltelijk gedekte gevallen en overgeslagen P10 blijven afzonderlijk open. Zie [het besluit](Besluit-DEV-kern-20261023.json). De oorspronkelijke voorbereiding hieronder blijft als scopebasis herkenbaar.
 
 # F2 — eerste websiteketen: voorbereidingspakket
 

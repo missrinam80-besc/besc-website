@@ -1,6 +1,6 @@
 {
   "schema_version": "besc-f2-cases-v1",
-  "status": "dev_core_executed_closed_owner_acceptance_pending",
+  "status": "dev_core_accepted_open_variants_retained",
   "cases": [
     {
       "id": "B01",
@@ -1329,9 +1329,9 @@
       "level": "end_to_end_live",
       "action": "Koppel alle gevallen aan resultaat/bewijslaag en rapporteer resterende F1/F2-varianten.",
       "expected": "Geen planned als passed; menselijke acceptatie expliciet.",
-      "status": "awaiting_owner_acceptance",
-      "actual_result": "Alle 69 geplande gevallen aan concrete bewijslaag gekoppeld. Live kernproeven en afgeschermde afsluiting gecontroleerd. Gedeeltelijk gedekte varianten en overgeslagen P10 blijven zichtbaar; volledige formele F2-acceptatie nog niet gegeven.",
-      "evidence_ref": "f2-final-closure-check-20261023.json; f2-acceptatie-bewijsregister-20261023.json",
+      "status": "accepted_dev_core_with_open_variants",
+      "actual_result": "Linda aanvaardt op 23 oktober 2026 expliciet de bewezen DEV-kern. De 38 gedeeltelijk gedekte gevallen blijven afzonderlijk open; P10 blijft op verzoek overgeslagen. E04 is afgesloten voor deze beperkte scope, zonder productie- of algemene beveiligingsvrijgave.",
+      "evidence_ref": "Besluit-DEV-kern-20261023.json; eindcontrole-20261023.json; acceptatiebewijs-20261023.json",
       "release_blocking": true,
       "covers_packages": [
         "F2.4",
@@ -1340,7 +1340,7 @@
       "environment": "DEV/CI as explicitly scoped",
       "tested_cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
       "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
-      "recorded_at_utc": "2026-10-23T08:27:35.288908+00:00"
+      "recorded_at_utc": "2026-10-23T08:41:11.496240+00:00"
     },
     {
       "id": "Q01",
@@ -1362,8 +1362,8 @@
       "recorded_at_utc": "2026-10-23T08:27:35.288908+00:00"
     }
   ],
-  "human_acceptance": false,
-  "updated_at_utc": "2026-10-23T08:27:35.288908+00:00",
+  "human_acceptance": true,
+  "updated_at_utc": "2026-10-23T08:41:11.496240+00:00",
   "status_counts": {
     "verified_live": 16,
     "partial": 38,
@@ -1372,7 +1372,7 @@
     "skipped_by_user": 1,
     "verified_live_scope": 5,
     "verified_live_upper_bound": 2,
-    "awaiting_owner_acceptance": 1
+    "accepted_dev_core_with_open_variants": 1
   },
   "evidence_availability": {
     "curated_versioned_files": [
@@ -1395,5 +1395,21 @@
     "independent_closure": "eindcontrole-20261023.json",
     "other_evidence": "Earlier detailed local reports remain in the authorized task workspace; the result text states their scope. No backup contents, configuration secrets, Auth tokens or raw server environments are included.",
     "CI": "Exact run IDs and release commits are recorded in Uitvoering-20261023.md."
+  },
+  "acceptance_scope": "proven_dev_core",
+  "full_matrix_accepted": false,
+  "owner_decision": {
+    "decision": "accepted_dev_core_with_open_variants",
+    "decision_maker": "Linda Heremans, voorzitter",
+    "source": "Expliciet antwoord van de gebruiker in deze chat op de formele F2-afsluitvraag",
+    "decision_date": "2026-10-23",
+    "recorded_at_utc": "2026-10-23T08:41:11.496240+00:00",
+    "verbatim_answer": "De bewezen DEV-kern accepteren; genoemde varianten afzonderlijk open houden",
+    "scope": "proven_dev_core",
+    "full_matrix_accepted": false,
+    "partial_cases_remain_open": 38,
+    "consent_case_skipped_by_user": "P10",
+    "production_release_authorized": false,
+    "f1_open_variants_unchanged": true
   }
 }

@@ -1,8 +1,8 @@
-# F2 — DEV-kern uitgevoerd, eindacceptatie open
+# F2 — DEV-kern aanvaard; resterende varianten afzonderlijk open
 
 Stand: 23 oktober 2026, na de live eindcontrole. Linda heeft de uitvoering toegestaan en de serverstappen zelf uitgevoerd op BESCSRVDEV. Dit verslag actualiseert de historische bouwstand van 22 oktober.
 
-De eerste websiteketen is gebouwd, op afgeschermde DEV uitgerold en met herkenbare testinhoud beproefd. De staging is na de proeven gesloten. Alle tijdelijke testtoegang en publicatierollen zijn beëindigd. De volledige formele F2-acceptatie is nog open: de persoonlijke toestemmingsproef is op verzoek overgeslagen en het register bevat gedeeltelijk gedekte varianten.
+De eerste websiteketen is gebouwd, op afgeschermde DEV uitgerold en met herkenbare testinhoud beproefd. De staging is na de proeven gesloten. Alle tijdelijke testtoegang en publicatierollen zijn beëindigd. Linda heeft op 23 oktober 2026 de bewezen DEV-kern uitdrukkelijk aanvaard: “De bewezen DEV-kern accepteren; genoemde varianten afzonderlijk open houden”. Daarmee is F2 voor deze DEV-kern afgesloten. De persoonlijke toestemmingsproef blijft op verzoek overgeslagen en de 38 gedeeltelijk gedekte gevallen blijven afzonderlijk open.
 
 ## Beoordeelde releases
 
@@ -62,7 +62,7 @@ De query gebruikte `begin read only; select; rollback`. De teruggelezen waarden 
 
 Het afgeschermde testbewijs blijft bewaard. De bestaande publieke website blijft beschikbaar. De uitrolcontroles bevestigen behoud van Twitch-instellingen en de vier eerder uitgeschakelde functies.
 
-## Volledige acceptatie blijft een afzonderlijk besluit
+## Besluit en afzonderlijk open gehouden varianten
 
 [acceptatiebewijs-20261023.json](acceptatiebewijs-20261023.json) koppelt alle 69 oorspronkelijke gevallen aan resultaat en bewijslaag:
 
@@ -73,7 +73,7 @@ Het afgeschermde testbewijs blijft bewaard. De bestaande publieke website blijft
 | Gecontroleerd binnen expliciete scope of CI | 6 |
 | Gedeeltelijk gedekt | 38 |
 | Door Linda overgeslagen | 1 |
-| Menselijke eindacceptatie open | 1 |
+| DEV-kern door Linda aanvaard (E04) | 1 |
 
 Bij gedeeltelijke dekking heeft een deel van de geplande varianten bewijs. De resterende varianten staan per geval vermeld. De belangrijkste groepen zijn:
 
@@ -84,4 +84,4 @@ Bij gedeeltelijke dekking heeft een deel van de geplande varianten bewijs. De re
 - Algemene rechtenvrijgave voor echte inhoud en een nieuwe volledige Discord-/Twitch-/saldoketen vallen buiten het geleverde live testbewijs.
 - P10, de persoonlijke toestemmingsproef, blijft op verzoek overgeslagen.
 
-E04 blijft open tot de bevoegde eigenaar de bewezen DEV-kern en de expliciet resterende punten beoordeelt. Dit verslag geeft geen productie- of algemene beveiligingsvrijgave. De afzonderlijk open gehouden F1-varianten blijven herkenbaar; het F2-rollbackbewijs sluit die niet stilzwijgend allemaal af.
+E04 is voor de bewezen DEV-kern afgesloten met [Linda’s expliciete besluit](Besluit-DEV-kern-20261023.json). De 29 inhoudelijke gevallen houden hun beschreven bewijslaag; de 38 gedeeltelijk gedekte gevallen en P10 zijn niet als geslaagd geherclassificeerd. De eerdere eindcontrole is een ongewijzigde historische meting van vóór dit besluit; de toenmalige waarde `human_final_acceptance: false` wordt door dit afzonderlijke besluit opgevolgd. Voor deze vastlegging is geen nieuwe deploy, migratie of toegangstoekenning nodig. Dit verslag geeft geen productie- of algemene beveiligingsvrijgave. De afzonderlijk open gehouden F1-varianten blijven herkenbaar; het F2-rollbackbewijs sluit die niet stilzwijgend allemaal af.
