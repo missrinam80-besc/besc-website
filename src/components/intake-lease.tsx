@@ -7,7 +7,7 @@ export function IntakeLease({leaseId,versionKey,detailId,children}:{leaseId:stri
   const hide=()=>{document.documentElement.dataset.protected='true';};
   const check=async()=>{if(busy)return;busy=true;controller=new AbortController();const timer=setTimeout(()=>controller?.abort(),5000);
    try{const r=await fetch('/api/platform/intake'+(detailId?'/applications/'+detailId:''),{cache:'no-store',credentials:'same-origin',redirect:'error',signal:controller.signal});if(!r.ok)throw Error();const raw=await r.json();let key:string,id:string;
-    if(detailId){const v=intakeDetailSchema.parse(raw);id=v.lease_id;key=String(v.version);}else{const v=intakeOwnSchema.parse(raw);id=v.lease_id;key=JSON.stringify([v.forms.map(f=>f.id),v.applications.map(a=>[a.id,a.version])]);}
+    if(detailId){const v=intakeDetailSchema.parse(raw);id=v.lease_id;key=String(v.version);}else{const v=intakeOwnSchema.parse(raw);id=v.lease_id;key=JSON.stringify([v.forms.map(f=>[f.id,f.vacancies?.map(v=>[v.public_id,v.revision])??[]]),v.applications.map(a=>[a.id,a.version])]);}
     if(id!==leaseId||key!==versionKey)throw Error();if(alive&&document.visibilityState==='visible'){setBlocked(false);delete document.documentElement.dataset.protected;}
    }catch{if(alive){hide();if(document.visibilityState==='visible'||!controller.signal.aborted)setBlocked(true);}}finally{clearTimeout(timer);busy=false;}
   };
