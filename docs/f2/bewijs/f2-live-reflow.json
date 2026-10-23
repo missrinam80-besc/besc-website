@@ -1,0 +1,26 @@
+[
+  {
+    "requested": 320,
+    "client": 305,
+    "scroll": 305,
+    "no_horizontal_overflow": true
+  },
+  {
+    "requested": 390,
+    "client": 375,
+    "scroll": 375,
+    "no_horizontal_overflow": true
+  },
+  {
+    "requested": 768,
+    "client": 753,
+    "scroll": 753,
+    "no_horizontal_overflow": true
+  },
+  {
+    "requested": 1440,
+    "client": 1425,
+    "scroll": 1425,
+    "no_horizontal_overflow": true
+  }
+]

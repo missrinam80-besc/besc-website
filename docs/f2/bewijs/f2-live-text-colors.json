@@ -1,0 +1,205 @@
+{
+  "dark": [
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(245, 245, 243)",
+      "font_size": "16px",
+      "font_weight": "400",
+      "text": "",
+      "contrast": 17.43,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(245, 245, 243)",
+      "font_size": "14.4px",
+      "font_weight": "650",
+      "text": "Home",
+      "contrast": 17.43,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(245, 245, 243)",
+      "font_size": "14.4px",
+      "font_weight": "650",
+      "text": "Events",
+      "contrast": 17.43,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(245, 245, 243)",
+      "font_size": "14.4px",
+      "font_weight": "650",
+      "text": "Nieuws",
+      "contrast": 17.43,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(245, 245, 243)",
+      "font_size": "12.8px",
+      "font_weight": "400",
+      "text": "Licht",
+      "contrast": 17.43,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(245, 245, 243)",
+      "font_size": "12.8px",
+      "font_weight": "400",
+      "text": "Uitloggen",
+      "contrast": 17.43,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(240, 107, 107)",
+      "font_size": "11.52px",
+      "font_weight": "700",
+      "text": "BESC · Event",
+      "contrast": 6.36,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(245, 245, 243)",
+      "font_size": "56.8px",
+      "font_weight": "400",
+      "text": "TESTFIXTURE — NIET PUBLICEREN — eventmediaproef F2 — revisie B",
+      "contrast": 17.43,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(188, 188, 183)",
+      "font_size": "18.4px",
+      "font_weight": "400",
+      "text": "Synthetische eventproef, versie B. Dezelfde eigen afbeelding; vervangi",
+      "contrast": 9.98,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(245, 245, 243)",
+      "font_size": "16px",
+      "font_weight": "400",
+      "text": "TESTFIXTURE — NIET PUBLICEREN. Vervangende eventrevisie B met dezelfde",
+      "contrast": 17.43,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "color": "rgb(188, 188, 183)",
+      "font_size": "12.8px",
+      "font_weight": "400",
+      "text": "Een eigen plek voor onze community.",
+      "contrast": 9.98,
+      "at_least_4_5": true
+    }
+  ],
+  "light": [
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(24, 24, 24)",
+      "font_size": "16px",
+      "font_weight": "400",
+      "text": "",
+      "contrast": 16.55,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(24, 24, 24)",
+      "font_size": "14.4px",
+      "font_weight": "650",
+      "text": "Home",
+      "contrast": 16.55,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(24, 24, 24)",
+      "font_size": "14.4px",
+      "font_weight": "650",
+      "text": "Events",
+      "contrast": 16.55,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(24, 24, 24)",
+      "font_size": "14.4px",
+      "font_weight": "650",
+      "text": "Nieuws",
+      "contrast": 16.55,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(24, 24, 24)",
+      "font_size": "12.8px",
+      "font_weight": "400",
+      "text": "Donker",
+      "contrast": 16.55,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(24, 24, 24)",
+      "font_size": "12.8px",
+      "font_weight": "400",
+      "text": "Uitloggen",
+      "contrast": 16.55,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(153, 0, 0)",
+      "font_size": "11.52px",
+      "font_weight": "700",
+      "text": "BESC · Event",
+      "contrast": 8.32,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(24, 24, 24)",
+      "font_size": "56.8px",
+      "font_weight": "400",
+      "text": "TESTFIXTURE — NIET PUBLICEREN — eventmediaproef F2 — revisie B",
+      "contrast": 16.55,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(85, 85, 85)",
+      "font_size": "18.4px",
+      "font_weight": "400",
+      "text": "Synthetische eventproef, versie B. Dezelfde eigen afbeelding; vervangi",
+      "contrast": 6.95,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(24, 24, 24)",
+      "font_size": "16px",
+      "font_weight": "400",
+      "text": "TESTFIXTURE — NIET PUBLICEREN. Vervangende eventrevisie B met dezelfde",
+      "contrast": 16.55,
+      "at_least_4_5": true
+    },
+    {
+      "background": "rgb(247, 247, 245)",
+      "color": "rgb(85, 85, 85)",
+      "font_size": "12.8px",
+      "font_weight": "400",
+      "text": "Een eigen plek voor onze community.",
+      "contrast": 6.95,
+      "at_least_4_5": true
+    }
+  ],
+  "scope": "Displayed event page heading, paragraphs, header links/buttons and footer paragraph; not full WCAG conformance"
+}

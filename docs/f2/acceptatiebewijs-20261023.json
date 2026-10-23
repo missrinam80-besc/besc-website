@@ -1,0 +1,1399 @@
+{
+  "schema_version": "besc-f2-cases-v1",
+  "status": "dev_core_executed_closed_owner_acceptance_pending",
+  "cases": [
+    {
+      "id": "B01",
+      "package": "F2.0",
+      "title": "Baseline",
+      "level": "preflight",
+      "action": "Vergelijk actuele main, werkelijk draaiende CC-digest, historie/schema en F1-intrekkingen.",
+      "expected": "Geen onverklaarde afwijking; seed blijft uitgesloten.",
+      "status": "verified_live",
+      "actual_result": "Baseline, exacte images en 123 naar 124 registraties gecontroleerd.",
+      "evidence_ref": "F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646035+00:00"
+    },
+    {
+      "id": "B02",
+      "package": "F2.0",
+      "title": "Toegang",
+      "level": "preflight",
+      "action": "Controleer SSH-hostfingerprint, taakrechten en DNS-beheersessie zonder geheimen te loggen.",
+      "expected": "Alle afhankelijke live toegang bewezen of stap blijft geblokkeerd.",
+      "status": "partial",
+      "actual_result": "one.com en handmatige serveruitvoering bewezen; agent heeft geen SSH.",
+      "evidence_ref": "F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646048+00:00"
+    },
+    {
+      "id": "B03",
+      "package": "F2.0",
+      "title": "Testgroep",
+      "level": "preflight",
+      "action": "Bind crew/vrijwilligers aan actuele bestaande accounts; test oude/onbevestigde binding.",
+      "expected": "Alleen bevestigde actieve accounts in afgeschermde roster; geen CC-taakrol erbij.",
+      "status": "partial",
+      "actual_result": "Vier exact aangewezen bestaande accounts begrensd toegelaten; oude/onbevestigde actorvarianten apart beoordelen.",
+      "evidence_ref": "F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646054+00:00"
+    },
+    {
+      "id": "B04",
+      "package": "F2.0",
+      "title": "Resources",
+      "level": "preflight",
+      "action": "Inspecteer werkelijke proxy/netwerken, CPU/geheugen/schijf en poorten.",
+      "expected": "Veilige capaciteit en aparte upstream; geen tweede edge op 80/443.",
+      "status": "verified_live",
+      "actual_result": "Capaciteit, bestaande Caddy en afzonderlijke website-upstream gecontroleerd.",
+      "evidence_ref": "F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646056+00:00"
+    },
+    {
+      "id": "B05",
+      "package": "F2.0",
+      "title": "Bronnen",
+      "level": "preflight",
+      "action": "Vergelijk merkassets en contentinventaris met bron/rechten; geen bulkimport.",
+      "expected": "Onzekere rechten/feiten blokkeren hun inhoud, niet vervangen door verzinsels.",
+      "status": "partial",
+      "actual_result": "Alleen bestaande merkassets en eigen synthetische kleurvlakken gebruikt; geen algemene rechtenvrijgave van echte content.",
+      "evidence_ref": "F2-testmedia/origin.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646058+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "B06",
+      "package": "F2.0",
+      "title": "Open F1",
+      "level": "preflight",
+      "action": "Registreer drie F1-openpunten en beoordeel afhankelijke F2-proeven.",
+      "expected": "Geen eerdere beperking stilzwijgend als geslaagd gemarkeerd.",
+      "status": "verified_scope",
+      "actual_result": "F1-beperkingen blijven afzonderlijk; alleen werkelijke overlap met deze terugval bewezen.",
+      "evidence_ref": "besc-website-f2/docs/f2/Acceptatie.md",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.0"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646060+00:00"
+    },
+    {
+      "id": "A01",
+      "package": "F2.3",
+      "title": "Anoniem",
+      "level": "isolated_and_live",
+      "action": "Vraag HTML, RSC, API, media, metadata, OG, prefetch en sitemap zonder sessie.",
+      "expected": "Geen inhoud, titels of privévelden; login/deny volgens contract.",
+      "status": "partial",
+      "actual_result": "CI en live anonieme HTML/API/media blokkeren; niet elke RSC/OG/prefetch-variant apart live gemeten.",
+      "evidence_ref": "besc-website-f2/tests/browser/website.spec.ts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646062+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "A02",
+      "package": "F2.3",
+      "title": "Niet toegelaten",
+      "level": "isolated_and_live",
+      "action": "Gebruik geldig bestaand account zonder rosterbinding.",
+      "expected": "403/veilige loginweergave; geen inhoud.",
+      "status": "partial",
+      "actual_result": "Niet-toegelaten actor in database- en browserfixtures geweigerd; geen live proef met nieuw derde account.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-database.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646064+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "A03",
+      "package": "F2.3",
+      "title": "Verkeerde organisatie",
+      "level": "isolated_and_live",
+      "action": "Gebruik toegelaten actor van een andere organisatie en gemanipuleerde sitevelden.",
+      "expected": "Geen cross-tenant lezen of schrijven.",
+      "status": "partial",
+      "actual_result": "Geisoleerde andere-organisatie actor kan niet schrijven; volledige live cross-tenant matrix niet uitgevoerd.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-database.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646065+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "A04",
+      "package": "F2.3",
+      "title": "JWT",
+      "level": "isolated_and_live",
+      "action": "Probeer verlopen/vervalste JWT, metadata-rol en clientcookie als autoriteit.",
+      "expected": "Serververificatie weigert alle omwegen.",
+      "status": "partial",
+      "actual_result": "Geisoleerde serververificatie en verwijderde sessies getest; geen live vervalste JWT-proef.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-database.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646067+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "A05",
+      "package": "F2.3",
+      "title": "Sleutel",
+      "level": "isolated_and_live",
+      "action": "Ontbrekende/verkeerde/geroteerde sitecredential plus geldige viewer.",
+      "expected": "Geen read; oude sleutel ongeldig; credential nooit client-side.",
+      "status": "partial",
+      "actual_result": "Verkeerde/ontbrekende sleutel geweigerd in API; live sleuteldraaiing niet getest.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646069+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "A06",
+      "package": "F2.3",
+      "title": "Directe database",
+      "level": "isolated_and_live",
+      "action": "Roep read-RPC/tabellen/Storage rechtstreeks met anon en gewone authenticated aan.",
+      "expected": "Geen tabel/media-uitlek; RPC vereist actuele sitebinding.",
+      "status": "partial",
+      "actual_result": "Geisoleerde tabellen/Storage en RPC-beveiliging getest; private live Storage-route geblokkeerd; overige directe live RPC-actorvarianten niet uitgevoerd.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-database.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646071+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "A07",
+      "package": "F2.3",
+      "title": "Intrekking lezer",
+      "level": "isolated_and_live",
+      "action": "Beëindig roster of accountstatus tijdens een actieve sessie.",
+      "expected": "Nieuwe reads geblokkeerd en actieve inhoud binnen 60 seconden weg.",
+      "status": "verified_live",
+      "actual_result": "Tijdelijke eigen website-testtoegang tijdens positieve open sessie ingetrokken: lijst geweigerd binnen 11.736 s, open view binnen 20.709 s en detail uiterlijk 34.459 s. Eigen CC-account en voorzittersmandaat behouden.",
+      "evidence_ref": "f2-own-viewer-revoked-live.json; f2-final-closure-check-20261023.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T08:27:35.288908+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "A08",
+      "package": "F2.3",
+      "title": "Cookies en redirect",
+      "level": "isolated_and_live",
+      "action": "Test callback naar andere host, openredirect en subdomaincookies.",
+      "expected": "Alleen exacte toegestane callback; host-only cookies; CC-sessie blijft werken.",
+      "status": "partial",
+      "actual_result": "Exacte callback toegevoegd en host-only cookies gebruikt; volledige negatieve redirectmatrix nog niet aan uitgevoerde proeven gekoppeld.",
+      "evidence_ref": "besc-website-f2/tests/browser/website.spec.ts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646074+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "A09",
+      "package": "F2.3",
+      "title": "Lezer is geen redacteur",
+      "level": "isolated_and_live",
+      "action": "Laat toegelaten crew/vrijwilliger write/review/release uitvoeren.",
+      "expected": "Alle schrijfhandelingen geweigerd zonder actuele taakrol.",
+      "status": "partial",
+      "actual_result": "Gebruiker bevestigt belgianstreamers wordt bij directe CC-websitebeheerroute naar /app?fout=geen-toegang gestuurd; geen beheerpagina bereikbaar. Websitelezen en verdwijnen eerder door hetzelfde tweede account bevestigd. Afzonderlijke action-POSTweigeringen alleen in geisoleerde tests bewezen.",
+      "evidence_ref": "Human report 2026-10-23; F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795700+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "A10",
+      "package": "F2.3",
+      "title": "Adminomweg",
+      "level": "isolated_and_live",
+      "action": "Test voorzitter/admin zonder publicatierol.",
+      "expected": "Geen concept/review/vrijgave via beheerdersomweg.",
+      "status": "partial",
+      "actual_result": "Geisoleerde adminomweg geweigerd; eigen live publicatiebediening verdween na roleinde. Geen live write-poging geclaimd.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-database.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646078+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "P01",
+      "package": "F2.2",
+      "title": "Niet goedgekeurd",
+      "level": "postgres_and_live",
+      "action": "Probeer draft en in_review vrij te geven.",
+      "expected": "Geen pointer of publicatie; expliciet exact akkoord nodig.",
+      "status": "partial",
+      "actual_result": "Nieuwe draft kan in databasefixture niet worden vrijgegeven; live niet-goedgekeurde revisies bleven verborgen. Expliciete in_review release-poging nog niet afzonderlijk bewezen.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-database.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646079+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "P02",
+      "package": "F2.2",
+      "title": "Revisiebinding",
+      "level": "postgres_and_live",
+      "action": "Wijzig bron na submit en probeer oude in_review goed te keuren.",
+      "expected": "Conflict; niets nieuw vrijgegeven.",
+      "status": "verified_live",
+      "actual_result": "Bron gewijzigd na submit: bronversie 3 tegenover snapshotversie 2; oude beoordeling geweigerd, snapshot bleef in_review. Daarna oude synthetische snapshot ingetrokken.",
+      "evidence_ref": "f2-source-binding-live.json; f2-source-conflict-live.png",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646081+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "P03",
+      "package": "F2.2",
+      "title": "Oude snapshot",
+      "level": "postgres_and_live",
+      "action": "Maak nieuw concept bij actieve goedgekeurde snapshot.",
+      "expected": "Oude goedgekeurde snapshot blijft exact; nieuw concept erft geen akkoord.",
+      "status": "verified_live",
+      "actual_result": "Nieuws en event: nieuw concept B en afzonderlijke goedkeuring laten actieve snapshot A bytegelijk.",
+      "evidence_ref": "f2-live-replacement-proof.json; f2-event-media-followup.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795712+00:00"
+    },
+    {
+      "id": "P04",
+      "package": "F2.2",
+      "title": "Atomisch vervangen",
+      "level": "postgres_and_live",
+      "action": "Geef goedgekeurde revisie 2 vrij met expected epoch.",
+      "expected": "Zelfde public_id; exact nieuwe payload; geen half gemengde versie.",
+      "status": "verified_live",
+      "actual_result": "Nieuws en event: expliciete vrijgave B vervangt A onder hetzelfde publieke ID met exact nieuwe payload.",
+      "evidence_ref": "f2-live-replacement-proof.json; f2-event-media-followup.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795716+00:00"
+    },
+    {
+      "id": "P05",
+      "package": "F2.2",
+      "title": "Dubbele aanvraag",
+      "level": "postgres_and_live",
+      "action": "Herhaal request-ID met dezelfde en daarna andere invoer.",
+      "expected": "Zelfde uitkomst voor gelijk; conflict voor gewijzigd; geen dubbele events.",
+      "status": "verified_ci_scope",
+      "actual_result": "Geisoleerde gelijke replay en gewijzigde payload getest; gelijke replay na intrekking herstelt niets.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-database.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646086+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "P06",
+      "package": "F2.2",
+      "title": "Race intrekking",
+      "level": "postgres_and_live",
+      "action": "Race vertraagde publish/replay tegen intrekken en toestemming/media-intrekking.",
+      "expected": "Serialisatie met F1-lock; ingetrokken inhoud niet hersteld.",
+      "status": "partial",
+      "actual_result": "Native twee-verbindingenrace tegen vrijgave- en F1-revisie-intrekking bewezen; toestemming/media-races daarmee niet afzonderlijk bewezen.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-concurrency.mjs",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646088+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "P07",
+      "package": "F2.2",
+      "title": "Race vervangen",
+      "level": "postgres_and_live",
+      "action": "Laat twee reviewers op dezelfde epoch vervangen.",
+      "expected": "Eén winnaar, één conflict; consistente audit.",
+      "status": "verified_ci_scope",
+      "actual_result": "Native twee verbindingen: dezelfde epoch heeft een winnaar en een conflict.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-concurrency.mjs",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646089+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "P08",
+      "package": "F2.2",
+      "title": "Venster",
+      "level": "postgres_and_live",
+      "action": "Test vóór begin, exact begin/einde en ongeldige tijdsvolgorde.",
+      "expected": "Serverklok bepaalt; geen voortijdige of verlopen uitlevering.",
+      "status": "partial",
+      "actual_result": "Live venstereinde binnen 60 seconden bevestigd; alle begin/exacte grensvarianten niet daarmee afgedekt.",
+      "evidence_ref": "f2-live-expiry-proof.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646091+00:00"
+    },
+    {
+      "id": "P09",
+      "package": "F2.2",
+      "title": "Bronarchivering",
+      "level": "postgres_and_live",
+      "action": "Archiveer/verwijder bron terwijl pointer actief is.",
+      "expected": "Geen uitlevering; geen stille fallback naar oude revisie.",
+      "status": "verified_live",
+      "actual_result": "Uitsluitend synthetische eventbron gearchiveerd terwijl publicatiepointer actief bleef. Detail geweigerd binnen 11.975 s; actieve pagina binnen 26.661 s weg; lijst uiterlijk 37.360 s leeg. Afzonderlijke herstelstap gebruikt voor de eigen lezerproef; daarna bron weer gearchiveerd en vrijgave ingetrokken.",
+      "evidence_ref": "f2-source-archive-live.json; f2-final-closure-check-20261023.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T08:27:35.288908+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "P10",
+      "package": "F2.2",
+      "title": "Toestemming",
+      "level": "postgres_and_live",
+      "action": "Trek noodzakelijke toestemming/doel in.",
+      "expected": "Centrale geldigheid weigert alle routes; geen nieuwe consent verzonnen.",
+      "status": "skipped_by_user",
+      "actual_result": "Persoonlijke live toestemmingsproef op verzoek overgeslagen; testdoel ingetrokken; nul verklaringen.",
+      "evidence_ref": "f2-final-database-check-20261023.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646095+00:00"
+    },
+    {
+      "id": "P11",
+      "package": "F2.2",
+      "title": "Mediarechten",
+      "level": "postgres_and_live",
+      "action": "Trek rechtenbewijs van gebruikte afbeelding in.",
+      "expected": "Publicatie en bytes volgens geldigheidscontract geblokkeerd.",
+      "status": "verified_live",
+      "actual_result": "Intrekking specifiek synthetisch mediarechtenbewijs blokkeerde open view en lijst/detail/media.",
+      "evidence_ref": "f2-live-rights-proof.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646096+00:00"
+    },
+    {
+      "id": "P12",
+      "package": "F2.2",
+      "title": "Slug en ID",
+      "level": "postgres_and_live",
+      "action": "Probeer dubbele slug, verkeerd type/locale en private bron-ID als public_id.",
+      "expected": "Uniek en opaque; geen private ID in responses of cursors.",
+      "status": "partial",
+      "actual_result": "Opaque projectie en type/locale/slug-inputvalidatie getest; complete duplicate-slug matrix niet aan uitgevoerd bewijs gekoppeld.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.2"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646098+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "D01",
+      "package": "F2.3",
+      "title": "Veldselectie",
+      "level": "contract",
+      "action": "Injecteer organisatie/contact/budget/contract/evidencevelden, ook genest.",
+      "expected": "Strikte afwijzing; geen spread van bronrecord.",
+      "status": "verified_ci_scope",
+      "actual_result": "Strict geneste allowlist weigert private velden in producent/consumenttests.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646100+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "D02",
+      "package": "F2.3",
+      "title": "HTML",
+      "level": "contract",
+      "action": "Test script/events/unsafe href/iframe/form/trackingpixel en kapotte HTML.",
+      "expected": "Veilige parserallowlist; geen executable HTML.",
+      "status": "partial",
+      "actual_result": "Script/eventhandler/iframe/localhost-image getest; overige genoemde HTML-gevallen niet afzonderlijk geinventariseerd.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646101+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "D03",
+      "package": "F2.3",
+      "title": "URL en SSRF",
+      "level": "contract",
+      "action": "Test localhost, IP/internal, signed Storage URL, redirects en javascript/data URLs.",
+      "expected": "Geen arbitrary fetch/private locator; alleen gecontroleerde paden en veilige registratie-URL.",
+      "status": "partial",
+      "actual_result": "Onveilige schema/localhost/IP/internal/private/token-URLs geweigerd; complete redirect/signed-URL-variantmatrix niet afzonderlijk bewezen.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646103+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "D04",
+      "package": "F2.3",
+      "title": "Pagination",
+      "level": "contract",
+      "action": "Test nul/negatief/te groot limit, gemanipuleerde cursor, andere site/type/locale.",
+      "expected": "400; stabiele begrensde reeks zonder private cursorgegevens.",
+      "status": "partial",
+      "actual_result": "Limits, vervalste cursor, type en locale getest; aparte andere-site-cursorvariant nog niet aan bewijs gekoppeld.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646105+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "D05",
+      "package": "F2.3",
+      "title": "Taal en tijd",
+      "level": "contract",
+      "action": "Test onbekende locale, ongeldige RFC3339 en zomertijdweergave.",
+      "expected": "Weigering ongeldige data; Brusselsweergave correct; geen verzonnen vertaling.",
+      "status": "partial",
+      "actual_result": "Geldige klokwisseltijden na correctie live opgeslagen en onafhankelijk read-only bevestigd: 01:30 tot 03:30 Brussel heeft drie uur werkelijke duur. Locale- en RFC3339-negatieven blijven de eerder vermelde geisoleerde bewijslaag.",
+      "evidence_ref": "f2-source-binding-live.json; f2-dst-saved-live.png; f2-dst-full-tests-final.log",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795718+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "D06",
+      "package": "F2.3",
+      "title": "Niet beschikbaar",
+      "level": "contract",
+      "action": "Vraag onbekende, ingetrokken, niet vrijgegeven en verlopen slug.",
+      "expected": "Zelfde veilige 404; geen bestaansoracle.",
+      "status": "partial",
+      "actual_result": "Niet vrijgegeven, verlopen en ingetrokken inhoud veilig geblokkeerd; volledige oracle-matrix apart beoordelen.",
+      "evidence_ref": "f2-live-expiry-http-proof.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646108+00:00"
+    },
+    {
+      "id": "D07",
+      "package": "F2.3",
+      "title": "Afhankelijkheid",
+      "level": "contract",
+      "action": "Maak Auth/CC/DB tijdelijk onbereikbaar.",
+      "expected": "Geen oude inhoud; veilig 503/loginstate zonder geheime fout.",
+      "status": "verified_ci_scope",
+      "actual_result": "Geinjecteerde upstreamweigering/storing levert veilige fout zonder stale inhoud in API en browserfixtures.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646110+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "D08",
+      "package": "F2.3",
+      "title": "Limieten",
+      "level": "contract",
+      "action": "Overvraag API en zeer grote payloads/bestanden.",
+      "expected": "Begrensd geheugen/tijd; 429/veilige validatiefout; CC blijft gezond.",
+      "status": "partial",
+      "actual_result": "Rate-limit en byte-integriteit getest; volledige grote-payload/uploadcapaciteitsproef niet daarmee bewezen.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.3"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646112+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "W01",
+      "package": "F2.5",
+      "title": "Schermen",
+      "level": "browser",
+      "action": "Doorloop home, lijsten, details, leeg/nietgevonden/storing en terugnavigatie.",
+      "expected": "Werkende nav/states; geen fictieve content of lege beloofde portalen.",
+      "status": "partial",
+      "actual_result": "Live home/lijsten/details/leeg/geblokkeerd gebruikt; browser-suite apart bewijsniveau.",
+      "evidence_ref": "f2-after-rollback-republished.png",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646113+00:00"
+    },
+    {
+      "id": "W02",
+      "package": "F2.5",
+      "title": "Licht en donker",
+      "level": "browser",
+      "action": "Review beide thema’s met werkelijke BESC-assets en fontfallback.",
+      "expected": "Leesbaar, consistent, geen logo-vervorming of onleesbare laadflits.",
+      "status": "verified_live_scope",
+      "actual_result": "Live event met eigen testafbeelding in lichte en donkere modus bekeken. Bewijs geldt voor de geteste pagina en assets; geen volledige themaconformiteit verondersteld.",
+      "evidence_ref": "f2-event-media-light.png; f2-event-media-B-visible.png",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795721+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "W03",
+      "package": "F2.5",
+      "title": "Responsive",
+      "level": "browser",
+      "action": "Controleer 390/768/1440px en 320 CSS-px reflow.",
+      "expected": "Geen onbedoelde horizontale overflow of afgesneden bediening.",
+      "status": "verified_live",
+      "actual_result": "Live reflow op 320/390/768/1440 CSS-pixels; geen horizontale overflow bij de geteste pagina. Viewport na proef hersteld.",
+      "evidence_ref": "f2-live-reflow.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795723+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "W04",
+      "package": "F2.5",
+      "title": "Toetsenbord",
+      "level": "browser",
+      "action": "Gebruik skiplink, navigatie, thema, login en artikel-links zonder muis.",
+      "expected": "Logische focus, zichtbare focus, geen traps.",
+      "status": "partial",
+      "actual_result": "Native toetsenbordproef: skiplink, navigatievolgorde en thema via spatie werken. Volledige loginroute zonder muis nog niet bewezen.",
+      "evidence_ref": "f2-keyboard-live.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795724+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "W05",
+      "package": "F2.5",
+      "title": "Toegankelijkheid",
+      "level": "browser",
+      "action": "Combineer axe, contrastreview, headings, alt, zoom 200/400 en reduced motion.",
+      "expected": "Geen blokkerende bevinding; reviewbewijs naast scanner.",
+      "status": "partial",
+      "actual_result": "CI axe plus live tekstcontrastmetingen in beide modi: gemeten minima donker 6.36 en licht 6.95. Geen volledige WCAG-claim; zoom en reduced-motionreview nog open.",
+      "evidence_ref": "f2-live-text-colors.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795726+00:00"
+    },
+    {
+      "id": "W06",
+      "package": "F2.5",
+      "title": "Secrets",
+      "level": "browser",
+      "action": "Inspecteer browserbundles, source maps, logs en netwerk.",
+      "expected": "Geen sitekey, service_role, private IDs/broninhoud of credentials.",
+      "status": "partial",
+      "actual_result": "API-projectie/afgeleverde media veilig gecontroleerd; volledige browserbundle/sourcemap/loginspectie nog niet aan bewijs gekoppeld.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646121+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "W07",
+      "package": "F2.5",
+      "title": "Registratielink",
+      "level": "browser",
+      "action": "Controleer veilige externe eventlink en ontbrekende registratie.",
+      "expected": "Geen nepformulier; geen onveilig schema of onterecht succes.",
+      "status": "partial",
+      "actual_result": "Synthetisch event zonder registratie en onveilige URLs getest; echte veilige externe link niet doorlopen.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646125+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "W08",
+      "package": "F2.5",
+      "title": "Bestaande koppelingen",
+      "level": "browser",
+      "action": "Test CC-login/Discord/Twitchbinding en ongewijzigde saldo-observatie waar bevoegd.",
+      "expected": "Geen regressie; geen botconfig, saldo of flags veranderd.",
+      "status": "partial",
+      "actual_result": "CC-login, runtime-instellingen en flags behouden. Geen nieuwe volledige Discord/Twitch/saldoproef uitgevoerd.",
+      "evidence_ref": "F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.1",
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646127+00:00"
+    },
+    {
+      "id": "M01",
+      "package": "F2.5",
+      "title": "Private bytes",
+      "level": "media",
+      "action": "Vraag bucketpad, guessed ID en media zonder geldige actieve publicatie.",
+      "expected": "Geen openbare Storage, signed URL of padlekkage.",
+      "status": "partial",
+      "actual_result": "Private bucket, ongepubliceerde media en directe publieke Storage-route blokkeren. Volledige guessed-ID matrix niet daarmee bewezen.",
+      "evidence_ref": "f2-live-anonymous-storage-proof.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646128+00:00"
+    },
+    {
+      "id": "M02",
+      "package": "F2.5",
+      "title": "Uploadfixture",
+      "level": "media",
+      "action": "Test synthetische afbeelding plus MIME-spoofing, SVG, te groot bestand en metadata.",
+      "expected": "Alleen gecontroleerde derivative; grootte/type/rechten geborgd.",
+      "status": "partial",
+      "actual_result": "Werkelijke synthetische upload en afgeleverde WebP/hash/metadata gecontroleerd; alle negatieve uploadvarianten apart koppelen.",
+      "evidence_ref": "F2-testmedia/delivered-proof.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646130+00:00"
+    },
+    {
+      "id": "M03",
+      "package": "F2.5",
+      "title": "Intrekken media",
+      "level": "media",
+      "action": "Trek mediarecht in met al geladen afbeelding en actieve stream.",
+      "expected": "Nieuwe requests onmiddellijk geweigerd; beheerde actieve view/stream ≤60s geblokkeerd.",
+      "status": "partial",
+      "actual_result": "Live mediarechten-intrekking bij twee lezers en afzonderlijke intrekking van nieuwe eventmedia bewezen; mediarecord blokkeerde API/detail/open view/media binnen 34 seconden. Langdurige stream niet uitgevoerd.",
+      "evidence_ref": "f2-live-rights-proof.json; f2-event-media-record-withdrawal.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795728+00:00"
+    },
+    {
+      "id": "M04",
+      "package": "F2.5",
+      "title": "Optimizer",
+      "level": "media",
+      "action": "Vraag oude imageoptimizer/proxy/cached mediaroute aan.",
+      "expected": "Geen omweg naar ingetrokken bytes.",
+      "status": "verified_live_scope",
+      "actual_result": "Oude Next-imageoptimizerroute weigerde voor en na intrekking. Geen eerder geladen optimizer-cachebytes of volledige proxycachematrix geclaimd.",
+      "evidence_ref": "f2-event-media-record-withdrawal.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795729+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "C01",
+      "package": "F2.5",
+      "title": "Headers",
+      "level": "cache_and_live",
+      "action": "Meet HTML/API/media/metadata via edge en rechtstreeks intern.",
+      "expected": "private,no-store; geen ISR/CDN/SW-contentcache.",
+      "status": "partial",
+      "actual_result": "Live no-store/noindex op anonieme edgeverzoeken; volledige HTML/API/media/metadata plus interne matrix niet afzonderlijk gemeten.",
+      "evidence_ref": "f2-live-anonymous-storage-proof.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646137+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "C02",
+      "package": "F2.5",
+      "title": "Conditioneel",
+      "level": "cache_and_live",
+      "action": "Herhaal oude ETag/If-Modified-Since na intrekking.",
+      "expected": "Geen 304 of stale response; veilige 404/deny.",
+      "status": "partial",
+      "actual_result": "If-None-Match weigert stale inhoud in CI; If-Modified-Since en volledige live conditionele matrix nog open.",
+      "evidence_ref": "ecosystem-foundation-f01/tests/f2-api.test.mts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646138+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "C03",
+      "package": "F2.5",
+      "title": "Routercache",
+      "level": "cache_and_live",
+      "action": "Prefetch detail, trek in, navigeer via clientrouter en terugknop.",
+      "expected": "Geen oude inhoud vóór hercontrole.",
+      "status": "partial",
+      "actual_result": "Na intrekking browser-terug naar lege eventlijst en vooruit naar onbeschikbaar detail bewezen. Specifieke geforceerde prefetchvariant niet uitgevoerd.",
+      "evidence_ref": "f2-live-history-withdrawal.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795731+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "C04",
+      "package": "F2.5",
+      "title": "Actieve view",
+      "level": "cache_and_live",
+      "action": "Trek publicatie in bij geopende pagina; meet commit→verdwijnen.",
+      "expected": "≤60 seconden in normaal actieve browser, ook lijst/detail.",
+      "status": "verified_live_upper_bound",
+      "actual_result": "Open eventdetail binnen 9.225 s weg, gemeten vanaf voor opslagklik: conservatieve bovengrens voor deze proef.",
+      "evidence_ref": "f2-live-withdrawal-timing.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646142+00:00"
+    },
+    {
+      "id": "C05",
+      "package": "F2.5",
+      "title": "Achtergrond",
+      "level": "cache_and_live",
+      "action": "Ga offline/achtergrond, trek in en keer terug met pageshow/focus.",
+      "expected": "Inhoud afgeschermd tot geslaagde actuele validatie.",
+      "status": "partial",
+      "actual_result": "Tweede tester bevestigde verdwenen inhoud; geen apart gemeten offline/pageshow-protocol.",
+      "evidence_ref": "F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646144+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "C06",
+      "package": "F2.5",
+      "title": "Storing",
+      "level": "cache_and_live",
+      "action": "Breek hercontrole van open pagina.",
+      "expected": "Binnen begrensde controleperiode inhoud weg; geen stale fallback.",
+      "status": "partial",
+      "actual_result": "Geisoleerde upstreamfout zonder stale inhoud bewezen; geen nieuwe live Auth/DB-storing geinjecteerd.",
+      "evidence_ref": "besc-website-f2/tests/browser/website.spec.ts",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646146+00:00",
+      "evidence_basis": "Source assertions inspected; prior green CI recorded in execution checkpoint; no new live test inferred."
+    },
+    {
+      "id": "C07",
+      "package": "F2.5",
+      "title": "Alle routes",
+      "level": "cache_and_live",
+      "action": "Meet intrekking vanaf commit voor lijst/detail/media en controleer sitemap/OG.",
+      "expected": "Alle beheerde paden binnen60s; sitemap/OG blijven afgeschermd.",
+      "status": "partial",
+      "actual_result": "Live lijst/detail/media gemeten; geen volledige sitemap/OG/conditionele-cachematrix hieruit afgeleid.",
+      "evidence_ref": "f2-live-rights-proof.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646147+00:00"
+    },
+    {
+      "id": "C08",
+      "package": "F2.5",
+      "title": "Perioden",
+      "level": "cache_and_live",
+      "action": "Laat een ingepland venster aflopen zonder Cron/deploy.",
+      "expected": "Serverreads en actieve view stoppen op geldigheid binnen SLA.",
+      "status": "verified_live_upper_bound",
+      "actual_result": "Venstereinde blokkeerde actieve view en afzonderlijke routes binnen 60 s zonder deploy/Cron.",
+      "evidence_ref": "f2-live-expiry-http-proof.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.5"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646155+00:00"
+    },
+    {
+      "id": "R01",
+      "package": "F2.7",
+      "title": "Back-up",
+      "level": "release_live",
+      "action": "Controleer actuele exportchecksums, off-server kopie, Storage en geïsoleerd herstel.",
+      "expected": "Herstel aantoonbaar vóór migratie; geen dump/secret in Git.",
+      "status": "verified_live_scope",
+      "actual_result": "Baseline DB/Auth/Storage/Vault buiten VPS hersteld en nieuwe server-/websiteconfiguratie met 19 controlesommen tegen server geverifieerd. Geen volledige live rampenherstelproef geclaimd.",
+      "evidence_ref": "f2-rollback-offserver-check-20261023.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646157+00:00"
+    },
+    {
+      "id": "R02",
+      "package": "F2.7",
+      "title": "Migraties",
+      "level": "release_live",
+      "action": "Vergelijk verse/upgrade-repetitie en exacte live SQL/hashes.",
+      "expected": "Historie volgens manifest; oude123 behouden; seed niet toegevoegd.",
+      "status": "verified_live",
+      "actual_result": "Exact één additieve migratie, seed uitgesloten.",
+      "evidence_ref": "f2-cloud-migration-result.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646158+00:00"
+    },
+    {
+      "id": "R03",
+      "package": "F2.7",
+      "title": "Postcommit",
+      "level": "release_live",
+      "action": "Vergelijk schema/grants/rijen/audit na uitvoering.",
+      "expected": "Alleen bedoelde additieve wijziging; fout wordt geïnspecteerd, niet blind herhaald.",
+      "status": "verified_live",
+      "actual_result": "Oude rijen bewaard en postcommit schema/historie onafhankelijk geverifieerd.",
+      "evidence_ref": "f2-cloud-migration-result.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646160+00:00"
+    },
+    {
+      "id": "R04",
+      "package": "F2.7",
+      "title": "Proxy en DNS",
+      "level": "release_live",
+      "action": "Valideer deny-all vóór DNS, stagingrecord/TLS, Caddyreload en oude CC-host.",
+      "expected": "Alleen nieuwe staginghost; CC bereikbaar; mail/hoofdsite intact.",
+      "status": "verified_live",
+      "actual_result": "Exacte one.com staginghost en bestaande Caddy behouden; geldige TLS.",
+      "evidence_ref": "F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646162+00:00"
+    },
+    {
+      "id": "R05",
+      "package": "F2.7",
+      "title": "Images",
+      "level": "release_live",
+      "action": "Noteer werkelijk draaiende afzonderlijke digests en gezondheid.",
+      "expected": "Match met beoordeelde builds; geen mutable-tagaanname.",
+      "status": "verified_live",
+      "actual_result": "Beoordeelde CC- en website-digests werkelijk ingezet en exact hersteld.",
+      "evidence_ref": "F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646164+00:00"
+    },
+    {
+      "id": "R06",
+      "package": "F2.7",
+      "title": "Terugval",
+      "level": "release_live",
+      "action": "Zet vorige website- en CC-image gecontroleerd terug en daarna naar geteste versie.",
+      "expected": "Beide werken met additief schema; audit behouden; site dicht tijdens onveilige overgang.",
+      "status": "verified_live",
+      "actual_result": "Oude CC-image gezond met additief schema; nieuwe website gestopt/herstart, daarna event opnieuw vrijgegeven en ingetrokken.",
+      "evidence_ref": "f2-after-rollback-republished.png",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646166+00:00"
+    },
+    {
+      "id": "R07",
+      "package": "F2.7",
+      "title": "Flags",
+      "level": "release_live",
+      "action": "Lees alleen booleans van afgesproken flags en scopeclientgrenzen.",
+      "expected": "Vier bestaande functies uit; Twitch aan; geen botclientwijziging.",
+      "status": "verified_live",
+      "actual_result": "Vier bestaande functies uit en Twitchconfig behouden volgens gecontroleerde serveruitvoer.",
+      "evidence_ref": "F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646168+00:00"
+    },
+    {
+      "id": "R08",
+      "package": "F2.7",
+      "title": "Opruiming",
+      "level": "release_live",
+      "action": "Trek testpublicaties/rollen in en lees actuele grants/audit terug.",
+      "expected": "Geen tijdelijke publicatierollen of uitleverbare fixtures achtergebleven.",
+      "status": "verified_live_scope",
+      "actual_result": "Vier F2-revisies en twee vrijgaven ingetrokken; staging uit; twee tijdelijke publicatierollen beëindigd; historie/audit behouden, geen harde verwijdering.",
+      "evidence_ref": "f2-final-database-check-20261023.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646169+00:00"
+    },
+    {
+      "id": "E01",
+      "package": "F2.7",
+      "title": "Nieuwsketen",
+      "level": "end_to_end_live",
+      "action": "Maak TESTFIXTURE-nieuws, submit/review/release, lees als tester, rev2, vervang, trek in.",
+      "expected": "Alle stappen exact/auditbaar; private data weg; intrekking≤60s.",
+      "status": "verified_live_scope",
+      "actual_result": "Synthetisch nieuws beoordeeld, vrijgegeven, vervangen en ingetrokken; overige negatieve cases blijven apart.",
+      "evidence_ref": "f2-live-replacement-proof.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.4",
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T05:59:21.646171+00:00"
+    },
+    {
+      "id": "E02",
+      "package": "F2.7",
+      "title": "Eventketen",
+      "level": "end_to_end_live",
+      "action": "Herhaal volledige keten voor event met datum/locatie en beheerde testafbeelding.",
+      "expected": "Zelfde rechten/revisiegaranties; event/media-intrekking bewezen.",
+      "status": "verified_live",
+      "actual_result": "Eventketen met datum/locatie en beheerde eigen afbeelding: concept, beoordeling, vrijgave A, aparte revisie B, expliciete vervanging onder hetzelfde publieke ID, publicatie-intrekking en afzonderlijke mediarecord-intrekking live bewezen.",
+      "evidence_ref": "f2-event-media-followup.json; f2-event-media-record-withdrawal.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.4",
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795734+00:00"
+    },
+    {
+      "id": "E03",
+      "package": "F2.7",
+      "title": "Tweede tester",
+      "level": "end_to_end_live",
+      "action": "Lees met één werkelijk aangewezen crew/vrijwilligersaccount zonder taakrollen.",
+      "expected": "Alleen websiteprojectie leesbaar; CC-write geblokkeerd.",
+      "status": "partial",
+      "actual_result": "Gebruiker bevestigt belgianstreamers wordt bij directe CC-websitebeheerroute naar /app?fout=geen-toegang gestuurd; geen beheerpagina bereikbaar. Websitelezen en verdwijnen eerder door hetzelfde tweede account bevestigd. Afzonderlijke action-POSTweigeringen alleen in geisoleerde tests bewezen.",
+      "evidence_ref": "Human reports; F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.4",
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:2a814cc0bbfefaff65ad21900991a0abbc1be20038da0776cc1c5e2d2886ead1",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T07:07:31.795735+00:00"
+    },
+    {
+      "id": "E04",
+      "package": "F2.7",
+      "title": "Afsluiting",
+      "level": "end_to_end_live",
+      "action": "Koppel alle gevallen aan resultaat/bewijslaag en rapporteer resterende F1/F2-varianten.",
+      "expected": "Geen planned als passed; menselijke acceptatie expliciet.",
+      "status": "awaiting_owner_acceptance",
+      "actual_result": "Alle 69 geplande gevallen aan concrete bewijslaag gekoppeld. Live kernproeven en afgeschermde afsluiting gecontroleerd. Gedeeltelijk gedekte varianten en overgeslagen P10 blijven zichtbaar; volledige formele F2-acceptatie nog niet gegeven.",
+      "evidence_ref": "f2-final-closure-check-20261023.json; f2-acceptatie-bewijsregister-20261023.json",
+      "release_blocking": true,
+      "covers_packages": [
+        "F2.4",
+        "F2.7"
+      ],
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T08:27:35.288908+00:00"
+    },
+    {
+      "id": "Q01",
+      "package": "F2.6",
+      "covers_packages": [
+        "F2.6"
+      ],
+      "title": "Gezamenlijke CI en containerproef",
+      "level": "ci_and_container",
+      "action": "Bouw beide vastgepinde repos met frozen lockfile; voer lint/types, relevante CC-regressie, native SQL/concurrency en producent/consument/container-e2e uit.",
+      "expected": "Alle vereiste controles groen op de te releasen commits; beide images reproduceerbaar en aan exacte digests gekoppeld.",
+      "status": "verified_ci_scope",
+      "actual_result": "CC PR115 en hoofdbranch groen: 1049 tests, native F1/F2/replay/races, lint, typecontrole en build. Website blijft op beoordeelde PR2-image met 12 units en 5 browsergevallen. CI is geen live bewijs van alle genoemde varianten.",
+      "evidence_ref": "f2-dst-release-ready.json; F2-uitvoeringsstatus-20261022.json",
+      "release_blocking": true,
+      "environment": "DEV/CI as explicitly scoped",
+      "tested_cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
+      "tested_website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+      "recorded_at_utc": "2026-10-23T08:27:35.288908+00:00"
+    }
+  ],
+  "human_acceptance": false,
+  "updated_at_utc": "2026-10-23T08:27:35.288908+00:00",
+  "status_counts": {
+    "verified_live": 16,
+    "partial": 38,
+    "verified_scope": 1,
+    "verified_ci_scope": 5,
+    "skipped_by_user": 1,
+    "verified_live_scope": 5,
+    "verified_live_upper_bound": 2,
+    "awaiting_owner_acceptance": 1
+  },
+  "evidence_availability": {
+    "curated_versioned_files": [
+      "bewijs/f2-source-binding-live.json",
+      "bewijs/f2-source-archive-live.json",
+      "bewijs/f2-own-viewer-revoked-live.json",
+      "bewijs/f2-event-media-followup.json",
+      "bewijs/f2-event-media-record-withdrawal.json",
+      "bewijs/f2-live-reflow.json",
+      "bewijs/f2-keyboard-live.json",
+      "bewijs/f2-live-text-colors.json",
+      "bewijs/f2-live-history-withdrawal.json",
+      "bewijs/f2-dst-release-ready.json",
+      "bewijs/f2-dst-saved-live.png",
+      "bewijs/f2-source-conflict-live.png",
+      "bewijs/f2-source-archived-live.png",
+      "bewijs/f2-own-viewer-revoked-live.png",
+      "bewijs/f2-staging-closed-final.png"
+    ],
+    "independent_closure": "eindcontrole-20261023.json",
+    "other_evidence": "Earlier detailed local reports remain in the authorized task workspace; the result text states their scope. No backup contents, configuration secrets, Auth tokens or raw server environments are included.",
+    "CI": "Exact run IDs and release commits are recorded in Uitvoering-20261023.md."
+  }
+}

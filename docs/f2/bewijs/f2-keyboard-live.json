@@ -1,0 +1,49 @@
+{
+  "skip_target": {
+    "id": "",
+    "tag": "BODY"
+  },
+  "tab_order": [
+    {
+      "aria": "BESC home",
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": null,
+      "tag": "A",
+      "text": "Home"
+    },
+    {
+      "aria": null,
+      "tag": "A",
+      "text": "Events"
+    },
+    {
+      "aria": null,
+      "tag": "A",
+      "text": "Nieuws"
+    },
+    {
+      "aria": "Donkere weergave",
+      "tag": "BUTTON",
+      "text": "Donker"
+    },
+    {
+      "aria": null,
+      "tag": "BUTTON",
+      "text": "Uitloggen"
+    }
+  ],
+  "after_skip_tab": {
+    "href": "#inhoud",
+    "tag": "A",
+    "text": "Naar de inhoud"
+  },
+  "after_skip_native_tab": {
+    "tag": "A",
+    "text": "← Alle events",
+    "href": "/events"
+  },
+  "measurement_note": "Using native Tab without locator-induced refocus correctly skips navigation; earlier body.press result was a measurement artifact."
+}

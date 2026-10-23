@@ -1,3 +1,5 @@
+> Historische bouwstand. De actuele live uitvoering en eindcontrole staan in [Uitvoering-20261023.md](Uitvoering-20261023.md).
+
 # F2-uitvoering — 22 oktober 2026
 
 Linda heeft volledige F2-uitvoering goedgekeurd, inclusief het voorbereidingspakket in deze private websiterepository. Zij voert de serverstappen zelf uit in Termius. Het oorspronkelijke voorbereidingspakket is de scopebasis; de status hieronder is actueler dan de historische tekst “voorbereid/niet goedgekeurd”.

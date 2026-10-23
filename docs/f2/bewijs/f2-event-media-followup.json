@@ -1,0 +1,154 @@
+{
+  "before_release": {
+    "schema_version": "besc-website-publication-v1",
+    "items": [],
+    "next_cursor": null
+  },
+  "release_a": {
+    "schema_version": "besc-website-publication-v1",
+    "items": [
+      {
+        "schema_version": "besc-website-publication-v1",
+        "public_id": "560e2806-51dc-4093-9506-99b70edfb19b",
+        "revision": 2,
+        "slug": "testfixture-eventproef-f2",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — eventmediaproef F2",
+        "summary": "Synthetische eventproef met een eigen blauw-geel patroon. Geen echt evenement of inschrijving.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN. Nieuwe eventrevisie met zelfgemaakte blauwe en gele kleurvlakken. Uitsluitend aangewezen DEV-testers. De getoonde testdatum en locatie zijn geen aankondiging van een echte activiteit. Controlemerk: F2-EVENT-MEDIA-A.</p>"
+        },
+        "media": [
+          {
+            "public_media_id": "9bd8c36e-a4f2-4ac9-b618-19b066b52913",
+            "alt": "TESTFIXTURE — blauw en geel kleurpatroon voor eventtest",
+            "credit": "Zelfgemaakt synthetisch F2-eventpatroon; geen extern materiaal"
+          }
+        ],
+        "published_at": "2026-10-23T06:21:08.783124Z",
+        "type": "event",
+        "starts_at": "2026-10-20T16:00:00+00:00",
+        "ends_at": "2026-10-20T19:00:00+00:00",
+        "timezone": "Europe/Brussels",
+        "location_label": "TESTFIXTURE — geen fysieke locatie",
+        "registration_url": null
+      }
+    ],
+    "next_cursor": null
+  },
+  "during_b_draft": {
+    "schema_version": "besc-website-publication-v1",
+    "items": [
+      {
+        "schema_version": "besc-website-publication-v1",
+        "public_id": "560e2806-51dc-4093-9506-99b70edfb19b",
+        "revision": 2,
+        "slug": "testfixture-eventproef-f2",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — eventmediaproef F2",
+        "summary": "Synthetische eventproef met een eigen blauw-geel patroon. Geen echt evenement of inschrijving.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN. Nieuwe eventrevisie met zelfgemaakte blauwe en gele kleurvlakken. Uitsluitend aangewezen DEV-testers. De getoonde testdatum en locatie zijn geen aankondiging van een echte activiteit. Controlemerk: F2-EVENT-MEDIA-A.</p>"
+        },
+        "media": [
+          {
+            "public_media_id": "9bd8c36e-a4f2-4ac9-b618-19b066b52913",
+            "alt": "TESTFIXTURE — blauw en geel kleurpatroon voor eventtest",
+            "credit": "Zelfgemaakt synthetisch F2-eventpatroon; geen extern materiaal"
+          }
+        ],
+        "published_at": "2026-10-23T06:21:08.783124Z",
+        "type": "event",
+        "starts_at": "2026-10-20T16:00:00+00:00",
+        "ends_at": "2026-10-20T19:00:00+00:00",
+        "timezone": "Europe/Brussels",
+        "location_label": "TESTFIXTURE — geen fysieke locatie",
+        "registration_url": null
+      }
+    ],
+    "next_cursor": null
+  },
+  "during_b_approval": {
+    "schema_version": "besc-website-publication-v1",
+    "items": [
+      {
+        "schema_version": "besc-website-publication-v1",
+        "public_id": "560e2806-51dc-4093-9506-99b70edfb19b",
+        "revision": 2,
+        "slug": "testfixture-eventproef-f2",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — eventmediaproef F2",
+        "summary": "Synthetische eventproef met een eigen blauw-geel patroon. Geen echt evenement of inschrijving.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN. Nieuwe eventrevisie met zelfgemaakte blauwe en gele kleurvlakken. Uitsluitend aangewezen DEV-testers. De getoonde testdatum en locatie zijn geen aankondiging van een echte activiteit. Controlemerk: F2-EVENT-MEDIA-A.</p>"
+        },
+        "media": [
+          {
+            "public_media_id": "9bd8c36e-a4f2-4ac9-b618-19b066b52913",
+            "alt": "TESTFIXTURE — blauw en geel kleurpatroon voor eventtest",
+            "credit": "Zelfgemaakt synthetisch F2-eventpatroon; geen extern materiaal"
+          }
+        ],
+        "published_at": "2026-10-23T06:21:08.783124Z",
+        "type": "event",
+        "starts_at": "2026-10-20T16:00:00+00:00",
+        "ends_at": "2026-10-20T19:00:00+00:00",
+        "timezone": "Europe/Brussels",
+        "location_label": "TESTFIXTURE — geen fysieke locatie",
+        "registration_url": null
+      }
+    ],
+    "next_cursor": null
+  },
+  "release_b": {
+    "schema_version": "besc-website-publication-v1",
+    "items": [
+      {
+        "schema_version": "besc-website-publication-v1",
+        "public_id": "560e2806-51dc-4093-9506-99b70edfb19b",
+        "revision": 3,
+        "slug": "testfixture-eventproef-f2",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — eventmediaproef F2 — revisie B",
+        "summary": "Synthetische eventproef, versie B. Dezelfde eigen afbeelding; vervanging vereist nieuw akkoord en bewuste vrijgave.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN. Vervangende eventrevisie B met dezelfde zelfgemaakte blauwe en gele kleurvlakken. Geen echte activiteit of inschrijving. Alleen deze nieuwe exact beoordeelde snapshot mag de vorige vervangen. Controlemerk: F2-EVENT-MEDIA-B.</p>"
+        },
+        "media": [
+          {
+            "public_media_id": "9bd8c36e-a4f2-4ac9-b618-19b066b52913",
+            "alt": "TESTFIXTURE — blauw en geel kleurpatroon voor eventtest",
+            "credit": "Zelfgemaakt synthetisch F2-eventpatroon; geen extern materiaal"
+          }
+        ],
+        "published_at": "2026-10-23T06:38:10.860256Z",
+        "type": "event",
+        "starts_at": "2026-10-20T16:00:00+00:00",
+        "ends_at": "2026-10-20T19:00:00+00:00",
+        "timezone": "Europe/Brussels",
+        "location_label": "TESTFIXTURE — geen fysieke locatie — versie B",
+        "registration_url": null
+      }
+    ],
+    "next_cursor": null
+  },
+  "after_withdraw_list": {
+    "schema_version": "besc-website-publication-v1",
+    "items": [],
+    "next_cursor": null
+  },
+  "withdrawal_measurement_origin": "before CC save click; conservative upper bounds",
+  "list_ms": 15995,
+  "detail_ms": 32738,
+  "open_detail_ms": 43459,
+  "media_404_ms": 43950,
+  "open_view_visible": true,
+  "all_paths_under_60_seconds": true,
+  "publication_chain_completed": true,
+  "media_record_withdrawal_still_pending": false,
+  "media_record_withdrawal_evidence": "f2-event-media-record-withdrawal.json"
+}

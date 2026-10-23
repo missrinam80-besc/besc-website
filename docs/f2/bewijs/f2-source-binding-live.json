@@ -1,0 +1,28 @@
+{
+  "database_read": {
+    "event": {
+      "id": "5aa6caba-9471-4d5d-8966-b15cb3a0bbee",
+      "end_at": "2026-10-25T02:30:00+00:00",
+      "status": "idea",
+      "start_at": "2026-10-24T23:30:00+00:00",
+      "f1_revision": 3
+    },
+    "read_only": "on",
+    "revisions": [
+      {
+        "id": "33410f8f-18e8-4112-88a1-bd292764953f",
+        "end": "2026-10-25T02:30:00+00:00",
+        "start": "2026-10-24T23:30:00+00:00",
+        "status": "in_review",
+        "revision": 1,
+        "source_revision": 2
+      }
+    ]
+  },
+  "old_review_refused": true,
+  "ui_message": "De wijziging kon niet worden bevestigd. Controleer de actuele gegevens voordat je opnieuw probeert.",
+  "source_changed_after_submit": true,
+  "old_revision_still_in_review": true,
+  "live_cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
+  "actual_duration_hours": 3
+}

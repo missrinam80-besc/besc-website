@@ -1,0 +1,12 @@
+{
+  "media_id": "9bd8c36e-a4f2-4ac9-b618-19b066b52913",
+  "origin": "before CC save click; conservative upper bounds",
+  "list_items": 0,
+  "list_ms": 11915,
+  "detail_ms": 32547,
+  "open_detail_ms": 23985,
+  "media_404_ms": 33318,
+  "all_paths_under_60_seconds": true,
+  "optimizer_denied_before_and_after_withdrawal": true,
+  "long_running_stream_not_tested": true
+}

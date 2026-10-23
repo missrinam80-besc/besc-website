@@ -1,4 +1,4 @@
-> Actuele status: Linda heeft uitvoering goedgekeurd. Zie [uitvoeringsverslag](Uitvoering-20261022.md) voor bouwbewijs en de resterende live stappen. De oorspronkelijke voorbereiding hieronder blijft als scopebasis herkenbaar.
+> Actuele status: de afgeschermde DEV-kern is uitgevoerd en na de proeven gesloten. Zie [uitvoerings- en sluitingsbewijs van 23 oktober](Uitvoering-20261023.md) en [alle 69 resultaatgevallen](acceptatiebewijs-20261023.json). Menselijke eindacceptatie en expliciet resterende varianten staan open. De oorspronkelijke voorbereiding hieronder blijft als scopebasis herkenbaar.
 
 # F2 — eerste websiteketen: voorbereidingspakket
 
