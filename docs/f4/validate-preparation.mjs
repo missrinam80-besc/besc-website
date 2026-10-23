@@ -1,5 +1,6 @@
 // Website documentation/package checks only. No application or network action.
 import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -8,7 +9,7 @@ const base=path.dirname(fileURLToPath(import.meta.url)),repo=path.resolve(base,'
 const read=p=>JSON.parse(fs.readFileSync(path.join(base,p),'utf8'));
 const hash=p=>createHash('sha256').update(fs.readFileSync(p,'utf8').replaceAll('\r\n','\n')).digest('hex');
 const m=read('manifest.json');assert.equal(m.status,'prepared_for_review_not_implemented');assert.equal(m.live_changes,false);assert.equal(m.application_tests_executed,false);assert.equal(m.public_site_replaced,false);
-for(const s of m.source_files)assert.equal(hash(path.join(repo,s.path)),s.sha256_lf,s.path);
+for(const s of m.source_files)assert.equal(createHash('sha256').update(execFileSync('git',['show',m.baseline_website_commit+':'+s.path],{cwd:repo,encoding:'utf8'}).replaceAll('\r\n','\n')).digest('hex'),s.sha256_lf,s.path);
 for(const c of m.contracts)assert.equal(hash(path.join(base,'contracts',c.file)),c.sha256_lf,c.file);
 const contract=read('contracts/platform-contract.json');assert.equal(contract.staging_anonymous_access,false);assert.equal(contract.website_direct_business_table_reads,false);assert.equal(contract.success_requires_commit,true);assert.equal(contract.new_runtime_flags_default,'off');
 const schema=read('contracts/public.schema.json'),fixtures=read('contracts/fixtures.json');assert.equal(schema.oneOf.length,4);assert.equal(fixtures.items.length,4);assert.equal(fixtures.publication_authorized,false);

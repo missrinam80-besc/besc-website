@@ -1,3 +1,5 @@
+> Bouwupdate: de eerste creatorketen is nu lokaal gebouwd. Zie [Implementatie creator](Implementatie-creator.md). Onderstaande voorbereiding, contractvoorstellen en geplande acceptatiegevallen blijven de historische scope; zij bewijzen geen volledige F4-uitvoering.
+
 # F4 — websitevoorbereiding
 
 Status: volledig voorbereidingspakket voor review, nog geen F4-applicatiecode of live wijziging. Hoofdplan en gedeeld rechten-/datamodel staan in de afzonderlijke CC-repository onder `docs/f4/README.md`. Deze repository bevat de website-uitwerking en gecontroleerde kopieën van de voorgestelde contracten. Geen gedeelde codebase of credentials.
