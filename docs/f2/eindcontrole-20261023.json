@@ -1,0 +1,31 @@
+{
+  "environment": "Cloud DEV",
+  "checked_at_utc": "2026-10-23T08:23:31.464Z",
+  "read_only": true,
+  "method": "Browser SQL Editor: begin read only; select; rollback",
+  "result": {
+    "read_only": "on",
+    "f2_revisions": 8,
+    "history_count": 124,
+    "site_inactive": true,
+    "f2_consent_records": 0,
+    "active_site_viewers": 0,
+    "unwithdrawn_entries": 0,
+    "media_bucket_private": true,
+    "unrevoked_test_media": 0,
+    "own_cc_account_active": true,
+    "chair_binding_still_valid": true,
+    "synthetic_source_archived": true,
+    "f2_revisions_not_withdrawn": 0,
+    "f2_consent_purpose_withdrawn": true,
+    "own_other_workflow_roles_retained": [
+      "consent_registrar",
+      "partner_editor"
+    ],
+    "active_temporary_publication_roles": 0,
+    "latest_two_role_revocations_audited": 2
+  },
+  "cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
+  "website_image": "sha256:8cfe9f9efb256524bfc804c3494927f0949f6b8f919c1ab529f427f93f469344",
+  "human_final_acceptance": false
+}

@@ -1,0 +1,43 @@
+{
+  "source_event_id": "5aa6caba-9471-4d5d-8966-b15cb3a0bbee",
+  "before": {
+    "schema_version": "besc-website-publication-v1",
+    "items": [
+      {
+        "schema_version": "besc-website-publication-v1",
+        "public_id": "3b2b27b3-afcd-4f45-a488-ceba0e16a19d",
+        "revision": 2,
+        "slug": "testfixture-bronbinding-f2",
+        "locale": "nl-BE",
+        "title": "TESTFIXTURE — NIET PUBLICEREN — bronbinding F2 — actuele versie",
+        "summary": "Synthetische F2-proef voor bronarchivering en lezerintrekking, met correcte Brusselse klokwisseltijden.",
+        "body": {
+          "format": "sanitized_html",
+          "value": "<p>TESTFIXTURE — NIET PUBLICEREN. Exacte snapshot van bronversie B, uitsluitend voor aangewezen DEV-testers. Geen echte activiteit, inschrijving, persoonsgegevens of externe communicatie. Controlemerk: F2-SOURCE-B.</p>"
+        },
+        "media": [],
+        "published_at": "2026-10-23T08:11:16.900276Z",
+        "type": "event",
+        "starts_at": "2026-10-24T23:30:00+00:00",
+        "ends_at": "2026-10-25T02:30:00+00:00",
+        "timezone": "Europe/Brussels",
+        "location_label": "TESTFIXTURE — geen fysieke locatie",
+        "registration_url": null
+      }
+    ],
+    "next_cursor": null
+  },
+  "detail": {
+    "elapsed_ms": 11975,
+    "body": "{\"code\":\"not_available\"}"
+  },
+  "list": {
+    "elapsed_ms": 37360,
+    "body": "{\"schema_version\":\"besc-website-publication-v1\",\"items\":[],\"next_cursor\":null}"
+  },
+  "open_view_elapsed_ms": 26661,
+  "open_view_unavailable": true,
+  "old_marker_visible": false,
+  "measured_from_before_save_click": true,
+  "cc_image": "sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38"
+}

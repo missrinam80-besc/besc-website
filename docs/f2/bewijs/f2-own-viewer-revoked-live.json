@@ -1,0 +1,18 @@
+{
+  "account_confirmed_by_user": "missrinam80",
+  "own_view_before_positive": true,
+  "public_entry": "3b2b27b3-afcd-4f45-a488-ceba0e16a19d",
+  "list": {
+    "elapsed_ms": 11736,
+    "body": "{\"code\":\"not_available\"}"
+  },
+  "detail": {
+    "elapsed_ms": 34459,
+    "body": "{\"code\":\"not_available\"}"
+  },
+  "open_view_elapsed_ms": 20709,
+  "open_view_unavailable": true,
+  "old_marker_visible": false,
+  "measured_from_before_save_click": true,
+  "cc_account_and_chair_mandate_not_changed": true
+}

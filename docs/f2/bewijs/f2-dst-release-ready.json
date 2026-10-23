@@ -1,0 +1,23 @@
+{
+  "pr": "https://github.com/missrinam80-besc/besc-commandcenter/pull/115",
+  "reviewed_head": "d1a93de123c59f0754b72ec1ba5efb46c627ac48",
+  "merge": "f68a0e13bfc730d0e787bf4f0cfe56603c645254",
+  "pr_quality_run": 39915662201,
+  "pr_quality_success": true,
+  "main_quality_run": 39916670199,
+  "main_quality_success": true,
+  "image_run": 39916670197,
+  "image_success": true,
+  "image": "ghcr.io/missrinam80-besc/besc-commandcenter@sha256:50d71244b514035e49eab97678433816968de0f428852c043c6d63091a151c38",
+  "helper_sha256": "e65314ccc29c9a374a8480fc5636ad1976bbcc77aa1496b4886134d51019e42a",
+  "local_tests": 1049,
+  "local_tests_passed": true,
+  "mock_deploy_cases_passed": 9,
+  "mock_scope": "Windows workspace simulation; root and Linux modes not exercised; production guards retained",
+  "server_changed_by_this_release": false,
+  "migration_needed": false,
+  "live_F2_complete": false,
+  "temporary_roles_still_require_revocation": true,
+  "consent_test_still_skipped": true,
+  "recorded_at_utc": "2026-10-23T07:25:56Z"
+}
