@@ -19,7 +19,7 @@ test('Mijn BESC presentation: personal confirmation unchecked and own mutations 
  const code=ts.transpileModule(readFileSync(new URL('../src/app/mijn-besc/page.tsx',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText;
  const pass=({children}:{children:React.ReactNode})=>React.createElement('section',null,children);
  const mocks:Record<string,unknown>={'@/components/shell':{Shell:pass},'@/components/creator-own-lease':{CreatorOwnLease:pass},'@/lib/creator-data':{ownCreator:async()=>state},'@/lib/content':{ContentFailure:class extends Error{}},'@/lib/creator-contract':contract,'./actions':{ownCreatorAction:async()=>{}}};
- runInNewContext(code,{module,exports:module.exports,require:(key:string)=>key in mocks?mocks[key]:native(key)});
+ runInNewContext(code,{process:{env:{BESC_CREATOR_PLATFORM_ENABLED:"true"}},module,exports:module.exports,require:(key:string)=>key in mocks?mocks[key]:native(key)});
  const html=renderToStaticMarkup(await module.exports.default({searchParams:Promise.resolve({})}));
  const confirmation=html.match(/<input[^>]*name="accepted"[^>]*>/)?.[0];assert(confirmation);assert(!confirmation.includes('checked'));assert(html.includes('name="request_id"'));assert(html.includes('name="consent_id"'));assert(html.includes('&lt;script&gt;'));assert(!html.includes('<script>alert(1)'));assert(!html.includes('publication_reviewer'));assert(!html.includes('name="organization_id"'));
 });

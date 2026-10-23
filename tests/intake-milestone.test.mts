@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createRequire} from 'node:module';
+import {runInNewContext} from 'node:vm';
+import ts from 'typescript';
+import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
+import * as contract from '../src/lib/intake-contract.ts';
+const native=createRequire(import.meta.url),id='11111111-1111-4111-8111-111111111111';
+test('Mijn aanvragen: unchecked acknowledgement and receipt status without actor input',async()=>{
+ const module={exports:{} as {default:(props:unknown)=>Promise<React.ReactNode>}};
+ const state={lease_id:id,forms:[{id,title:'TESTFIXTURE NIET PUBLICEREN',version:1,notice_version:'TESTFIXTURE-v1',notice_body:'TESTFIXTURE privacytekst',legal_basis:'TESTFIXTURE',retention_policy:'TESTFIXTURE'}],applications:[{id,title:'TESTFIXTURE',version:1,status:'received',created_at:'2026-10-23T12:00:00Z'}]};
+ const code=ts.transpileModule(readFileSync(new URL('../src/app/mijn-besc/aanvragen/page.tsx',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText;
+ const pass=({children}:{children:React.ReactNode})=>React.createElement('section',null,children);
+ const mocks:Record<string,unknown>={'@/components/shell':{Shell:pass},'@/components/intake-lease':{IntakeLease:pass},'@/lib/intake-data':{ownIntake:async()=>state},'@/lib/content':{ContentFailure:class extends Error{}},'@/lib/intake-contract':contract,'./actions':{ownIntakeAction:async()=>{}}};
+ runInNewContext(code,{module,exports:module.exports,require:(key:string)=>key in mocks?mocks[key]:native(key)});
+ const html=renderToStaticMarkup(await module.exports.default({searchParams:Promise.resolve({})}));
+ const confirmation=html.match(/<input[^>]*name="notice_acknowledged"[^>]*>/)?.[0];assert(confirmation);assert(!confirmation.includes('checked'));assert(html.includes('name="request_id"'));assert(html.includes('Ontvangen'));assert(!html.includes('name="actor"'));assert(!html.includes('internal_note'));
+ assert(!contract.intakePayloadSchema.safeParse({organization_name:'TESTFIXTURE',requested_roles:['esports'],message:'TESTFIXTURE',user_id:id}).success);
+});
