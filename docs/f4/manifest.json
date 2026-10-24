@@ -1,0 +1,74 @@
+{
+  "format": "besc-f4-website-preparation-v1",
+  "status": "prepared_for_review_not_implemented",
+  "baseline_website_commit": "3c3a841a183c8f04f4e2394d41db1da5754ede01",
+  "baseline_cc_commit": "b7ab31b63f0754fee3fb3c578d7488cb25f4dd6e",
+  "authoritative_cc_directory": "docs/f4",
+  "live_changes": false,
+  "application_tests_executed": false,
+  "public_site_replaced": false,
+  "contracts": [
+    {
+      "file": "platform-contract.json",
+      "sha256_lf": "33b816bc25855a987b9928b16855c31261715faa669f3e3aa5b9c04f654dfa7a"
+    },
+    {
+      "file": "public.schema.json",
+      "sha256_lf": "7aea8d036059509b771cbbb5ab083f95bbe86260892d9c14a8ccbd475b8cb5b9"
+    },
+    {
+      "file": "intake.schema.json",
+      "sha256_lf": "18c73ecb5109a225616085ad4be1fa30fe2e0d862d310af6c426bc361c0e3e4f"
+    },
+    {
+      "file": "fixtures.json",
+      "sha256_lf": "1dc6eefaa5f7cff830809723be8ded715cb3eb9a5d0e4b10549721d26cb6a466"
+    },
+    {
+      "file": "api-operations.json",
+      "sha256_lf": "3ca42c8c17ba5a21957276d19f04f14fe2540170f587007960ef02d5f15006c8"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "src/lib/auth.ts",
+      "sha256_lf": "20bed03c08e46960f541cf5aa264474901b199306e65f92761195c22b245f894"
+    },
+    {
+      "path": "src/lib/content.ts",
+      "sha256_lf": "a3d4df22a10e00d50c59c7bcafba37d8514f695815d919704c76853525492be5"
+    },
+    {
+      "path": "src/lib/contract.ts",
+      "sha256_lf": "3b5894e46434e34418b08b530f46a8afcf4967d05742af6c4d53e917022f783b"
+    },
+    {
+      "path": "src/components/shell.tsx",
+      "sha256_lf": "b2c24b93c61e6e36199d834f1e09b6bcd206cd84e76d66f5b27ec80b6afd0773"
+    },
+    {
+      "path": "src/components/content-view.tsx",
+      "sha256_lf": "c375230de827a9f666986d31a8f1ec6e18d009e044ce50188655ea105bc9dfd0"
+    },
+    {
+      "path": "src/app/style.css",
+      "sha256_lf": "915e969d9e3509b30e92b14c9766c67f8ef79acaa553e9fd152c63fa42ae68de"
+    },
+    {
+      "path": "src/proxy.ts",
+      "sha256_lf": "495ebfc28f5f02e3e27ecabb62775558e577b119f2db55c49877f99c412e533f"
+    },
+    {
+      "path": "docs/f2/Besluit-DEV-kern-20261023.json",
+      "sha256_lf": "281e9610fba03fa90db5e8fbdb76244ffa671f8f195d8a52efbdd936b4a87eb0"
+    },
+    {
+      "path": "docs/f2/acceptatiebewijs-20261023.json",
+      "sha256_lf": "f26ca8d0985f6411a84f4c9645047f26e8ceaf8a5ff4bdd57398d16c234ccef6"
+    },
+    {
+      "path": "docs/f2/eindcontrole-20261023.json",
+      "sha256_lf": "8170e1eaaed01df28955834a04d2eeced49e8867afc9d45c8e90d510a604b434"
+    }
+  ]
+}

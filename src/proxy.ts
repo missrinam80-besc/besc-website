@@ -1,3 +1,4 @@
+import {resolveLegacyRedirect} from '@/lib/legacy-redirect';
 import {NextResponse,type NextRequest} from 'next/server';
 import {createServerClient} from '@supabase/ssr';
 export async function proxy(request:NextRequest){
@@ -8,7 +9,7 @@ export async function proxy(request:NextRequest){
  if(url&&key&&process.env.BESC_WEBSITE_STAGING_ENABLED==='true'){
   const signal=AbortSignal.any([request.signal,AbortSignal.timeout(5000)]);
   const db=createServerClient(url,key,{global:{fetch:(input,init)=>fetch(input,{...init,cache:'no-store',signal})},cookieOptions:{name:'besc-website-auth',httpOnly:true,sameSite:'lax',secure:process.env.NODE_ENV==='production',path:'/'},cookies:{getAll:()=>request.cookies.getAll(),setAll(items){for(const {name,value}of items)request.cookies.set(name,value);forwarded.set('cookie',request.headers.get('cookie')??'');response=NextResponse.next({request:{headers:forwarded}});for(const {name,value,options}of items)response.cookies.set(name,value,{...options,domain:undefined});}}});
-  try{await db.auth.getUser();}catch{/* Downstream guards refuse content on auth failure. */}
+  try{const user=await db.auth.getUser();if(!user.error&&user.data.user&&!user.data.user.is_anonymous&&['GET','HEAD'].includes(request.method)&&process.env.BESC_SITE_REDIRECTS_ENABLED==='true'){const session=await db.auth.getSession();if(session.data.session?.access_token){const mapped=await resolveLegacyRedirect(request.nextUrl.pathname,request.nextUrl.search.slice(1),session.data.session.access_token,signal);if(mapped){const refreshed=response.cookies.getAll();if(mapped.status===410)response=new NextResponse(request.method==='HEAD'?null:'Deze historische pagina is niet meer beschikbaar.',{status:410,headers:{'Content-Type':'text/plain; charset=utf-8'}});else if(mapped.target_path){const site=new URL(process.env.BESC_WEBSITE_URL??'https://website-dev.belgianstreamerscommunity.be');if(site.origin==='https://website-dev.belgianstreamerscommunity.be'||process.env.NODE_ENV!=='production'&&site.hostname==='localhost')response=NextResponse.redirect(new URL(mapped.target_path,site.origin),307);}for(const c of refreshed)response.cookies.set(c.name,c.value,c);}}}}catch{/* Downstream guards refuse content on auth failure. */}
  }
  response.headers.set('Cache-Control','private, no-store, max-age=0');response.headers.set('X-Robots-Tag','noindex, nofollow');response.headers.set('Content-Security-Policy',csp);return response;
 }
