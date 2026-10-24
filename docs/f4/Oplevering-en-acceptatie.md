@@ -1,3 +1,5 @@
+> Actuele afsluiting (24 oktober 2026): [F4-bouw en DEV-oplevering](Afronding-DEV-20261024.md). Websitevrijgave en volledige productieacceptatie blijven open. Onderstaande voorbereiding en tussenstanden zijn historische momentopnamen.
+
 # Oplevering en acceptatie
 
 Websitebasis: main `3c3a841a183c8f04f4e2394d41db1da5754ede01`. CC-basis: `b7ab31b63f0754fee3fb3c578d7488cb25f4dd6e`. De CC-migratiehistorie is door gebruikersuitvoer bevestigd op 126. De oude seed blijft uitgesloten. Er is nu geen nieuwe server-/Cloudinspectie of applicatiewijziging gedaan.
