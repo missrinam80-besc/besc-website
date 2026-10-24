@@ -2,8 +2,8 @@
 import {useState,useEffect} from 'react';
 import {z} from 'zod';
 import {pageNavigationSchema} from '@/lib/site-content-contract';
-export function SitePageLinks({initial}:{initial:z.infer<typeof pageNavigationSchema>}){
+export function SitePageLinks({initial,contactActive=false}:{initial:z.infer<typeof pageNavigationSchema>;contactActive?:boolean}){
  const [data,setData]=useState<typeof initial|null>(initial);
  useEffect(()=>{let alive=true,busy=false,controller:AbortController|null=null;const hide=()=>setData(null);const check=async()=>{if(busy)return;busy=true;controller=new AbortController();const timer=setTimeout(()=>controller?.abort(),5000);try{const r=await fetch('/api/platform/navigation',{credentials:'same-origin',cache:'no-store',redirect:'error',signal:controller.signal});if(!r.ok)throw Error();const v=pageNavigationSchema.parse(await r.json());if(alive&&document.visibilityState==='visible')setData(v);}catch{if(alive)hide();}finally{clearTimeout(timer);busy=false;}};const resume=()=>{hide();void check();},visibility=()=>{controller?.abort();if(document.visibilityState==='visible')resume();else hide();};const timer=setInterval(()=>{if(document.visibilityState==='visible')void check();},20000);window.addEventListener('focus',resume);window.addEventListener('pageshow',resume);window.addEventListener('pagehide',hide);window.addEventListener('offline',hide);document.addEventListener('visibilitychange',visibility);if(document.visibilityState==='visible')void check();else hide();return()=>{alive=false;controller?.abort();clearInterval(timer);window.removeEventListener('focus',resume);window.removeEventListener('pageshow',resume);window.removeEventListener('pagehide',hide);window.removeEventListener('offline',hide);document.removeEventListener('visibilitychange',visibility);};},[]);
- return <>{data?.items.map(p=><a key={p.public_id} href={'/'+p.slug+'?locale='+p.locale}>{p.title}</a>)}</>;
+ return <>{data?.items.filter(p=>p.slug!=='contact'||!contactActive).map(p=><a key={p.public_id} href={'/'+p.slug+'?locale='+p.locale}>{p.title}</a>)}</>;
 }
