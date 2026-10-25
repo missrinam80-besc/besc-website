@@ -1,9 +1,17 @@
-import {commandCenterOrigin} from './deployment-config';
+import {commandCenterOrigin,publicWebsiteEnabled} from './deployment-config';
+import {publicRequest,PublicReadFailure} from './public-request';
 import 'server-only';
 import {f2ListSchema,f2PublicationSchema} from './contract';
 import {viewerToken} from './auth';
 export class ContentFailure extends Error{constructor(public status:number){super('content_unavailable');}}
 export async function content(path:string,query=''){
+ let open=false;try{open=publicWebsiteEnabled(process.env);}catch{throw new ContentFailure(503);}
+ if(open){
+  let raw;try{raw=await publicRequest(path,query);}catch(e){throw new ContentFailure(e instanceof PublicReadFailure?e.status:503);}
+  if(path.startsWith('media/'))return raw as {bytes:Uint8Array;mime:string};
+  const parsed=(path.split('/').length===2?f2PublicationSchema:f2ListSchema).safeParse(raw);if(!parsed.success)throw new ContentFailure(503);return parsed.data;
+ }
+
  if(process.env.BESC_WEBSITE_STAGING_ENABLED!=='true')throw new ContentFailure(503);
  let origin:URL;try{origin=new URL(commandCenterOrigin(process.env));}catch{throw new ContentFailure(503);}
  const signal=AbortSignal.timeout(4500),token=await viewerToken(signal);

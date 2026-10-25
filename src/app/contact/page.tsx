@@ -1,4 +1,4 @@
-import {releasePreviewEnabled} from '@/lib/deployment-config';
+import {releasePreviewEnabled,publicWebsiteEnabled} from '@/lib/deployment-config';
 import {notFound} from 'next/navigation';
 import {Shell} from '@/components/shell';
 import {ContactForm} from '@/components/contact-form';
@@ -8,7 +8,7 @@ import {ContentFailure} from '@/lib/content';
 export const dynamic='force-dynamic';
 export default async function Page({searchParams}:{searchParams:Promise<{locale?:string}>}){
  const {locale='nl-BE'}=await searchParams,query='?locale='+encodeURIComponent(locale);
- if(!releasePreviewEnabled(process.env)&&process.env.BESC_GENERAL_CONTACT_ENABLED==='true')return <Shell><ContactForm/></Shell>;
- if(process.env.BESC_SITE_PAGES_ENABLED!=='true')notFound();let data;try{data=await pages('pages/contact',query);}catch(e){if(!(e instanceof ContentFailure))throw e;if(e.status===404)notFound();return <Shell><h1>Contact is momenteel niet beschikbaar</h1></Shell>;}
+ if(!releasePreviewEnabled(process.env)&&!publicWebsiteEnabled(process.env)&&process.env.BESC_GENERAL_CONTACT_ENABLED==='true')return <Shell><ContactForm/></Shell>;
+ if(process.env.BESC_SITE_PAGES_ENABLED!=='true')notFound();let data;try{data=await pages('pages/contact',query);}catch(e){if(!(e instanceof ContentFailure))throw e;if(e.status===404)notFound();return <Shell><meta name="robots" content="noindex, nofollow"/><h1>Contact is momenteel niet beschikbaar</h1></Shell>;}
  return <Shell><SitePageView initial={data} path="pages/contact" query={query}/></Shell>;
 }

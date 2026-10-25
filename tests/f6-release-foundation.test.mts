@@ -33,13 +33,13 @@ test('Production requires exact separately approved HTTPS origins and rejects DE
 
 test('Wrong upstream is rejected before a viewer token or publication key can be forwarded',async()=>{
  let viewers=0,fetches=0;
- const m=load('../src/lib/content.ts',{'server-only':{},'./auth':{viewerToken:async()=>{viewers++;return 'TESTFIXTURE-viewer';}},'./deployment-config':deployment,'./contract':contract},{BESC_WEBSITE_STAGING_ENABLED:'true',BESC_CC_URL:'https://wrong.example.test',BESC_PUBLICATION_KEY:'TESTFIXTURE-not-a-live-publication-key'},{fetch:async()=>{fetches++;throw Error();}});
+ const m=load('../src/lib/content.ts',{'server-only':{},'./auth':{viewerToken:async()=>{viewers++;return 'TESTFIXTURE-viewer';}},'./deployment-config':deployment,'./contract':contract,'./public-request':{publicRequest:async()=>{throw Error('not_used_in_staging');},PublicReadFailure:class extends Error{}}},{BESC_WEBSITE_STAGING_ENABLED:'true',BESC_CC_URL:'https://wrong.example.test',BESC_PUBLICATION_KEY:'TESTFIXTURE-not-a-live-publication-key'},{fetch:async()=>{fetches++;throw Error();}});
  await assert.rejects(m.content('news'),(e:unknown)=>(e as {status:number}).status===503);assert.equal(viewers,0);assert.equal(fetches,0);
 });
 
 test('Prepared production origins do not bypass viewer verification or disabled staging',async()=>{
  let viewers=0,fetches=0;const env={...production,BESC_WEBSITE_STAGING_ENABLED:'true',BESC_PUBLICATION_KEY:'TESTFIXTURE-not-a-live-publication-key'};
- const m=load('../src/lib/content.ts',{'server-only':{},'./auth':{viewerToken:async()=>{viewers++;throw Error('viewer_required');}},'./deployment-config':deployment,'./contract':contract},env,{fetch:async()=>{fetches++;throw Error();}});
+ const m=load('../src/lib/content.ts',{'server-only':{},'./auth':{viewerToken:async()=>{viewers++;throw Error('viewer_required');}},'./deployment-config':deployment,'./contract':contract,'./public-request':{publicRequest:async()=>{throw Error('not_used_in_staging');},PublicReadFailure:class extends Error{}}},env,{fetch:async()=>{fetches++;throw Error();}});
  await assert.rejects(m.content('news'),/viewer_required/);assert.equal(viewers,1);assert.equal(fetches,0);
  env.BESC_WEBSITE_STAGING_ENABLED='false';await assert.rejects(m.content('news'),(e:unknown)=>(e as {status:number}).status===503);assert.equal(viewers,1);
 });
@@ -58,5 +58,5 @@ test('Release home fails closed on unavailable CMS content rather than using a s
  class ContentFailure extends Error{};let calls=0;
  const pass=({children}:{children:React.ReactNode})=>React.createElement('section',null,children);
  const m=load('../src/app/page.tsx',{'@/components/page-content':{PageContent:()=>{throw Error('old_home_not_allowed');}},'@/components/shell':{Shell:pass},'@/components/site-page-view':{SitePageView:()=>{throw Error('unavailable_payload_rendered');}},'@/lib/site-content-data':{pages:async(path:string)=>{assert.equal(path,'pages/home');calls++;throw new ContentFailure();}},'@/lib/content':{ContentFailure},'@/lib/deployment-config':deployment},{BESC_RELEASE_PREVIEW_ENABLED:'true'});
- const html=renderToStaticMarkup(await m.default());assert.equal(calls,1);assert(html.includes('Home is momenteel niet beschikbaar'));assert(!html.includes('BESC brengt Belgische'));
+ const html=renderToStaticMarkup(await m.default());assert.equal(calls,1);assert(html.includes('Home is momenteel niet beschikbaar'));assert(html.includes('noindex, nofollow'));assert(!html.includes('BESC brengt Belgische'));
 });

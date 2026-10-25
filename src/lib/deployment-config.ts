@@ -43,3 +43,22 @@ export function commandCenterOrigin(env: Environment = process.env): string {
 export function releasePreviewEnabled(env: Environment = process.env): boolean {
   return env.BESC_RELEASE_PREVIEW_ENABLED === 'true';
 }
+
+export function publicWebsiteEnabled(env: Environment = process.env): boolean {
+  if (env.BESC_PUBLIC_WEBSITE_ENABLED !== 'true') return false;
+  if (env.BESC_DEPLOYMENT_ENV !== 'production' || env.BESC_WEBSITE_STAGING_ENABLED === 'true') {
+    throw Error('public_and_staging_modes_must_be_separate');
+  }
+  websiteOrigin(env);
+  commandCenterOrigin(env);
+  return true;
+}
+
+export function publicIndexingEnabled(env: Environment = process.env): boolean {
+  return publicWebsiteEnabled(env) && env.BESC_PUBLIC_WEBSITE_INDEXING_ENABLED === 'true';
+}
+
+export function indexablePublicPath(path: string): boolean {
+  return path === '/' || ['/over-besc', '/contact', '/privacy', '/nieuws', '/events'].includes(path) ||
+    /^\/(nieuws|events)\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(path);
+}
