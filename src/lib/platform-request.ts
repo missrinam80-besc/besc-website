@@ -1,10 +1,10 @@
+import {commandCenterOrigin} from './deployment-config';
 import 'server-only';
 import {viewerToken} from './auth';
 import {ContentFailure} from './content';
 export async function platformRequest(path:string,body?:unknown,feature:'creator'|'intake'|'partner'|'vacancy'|'delegation'|'page'|'redirect'='creator'){
  if((feature==='page'?process.env.BESC_SITE_PAGES_ENABLED:feature==='redirect'?process.env.BESC_SITE_REDIRECTS_ENABLED:feature==='delegation'?process.env.BESC_PARTNER_DELEGATION_ENABLED:feature==='vacancy'?process.env.BESC_VACANCY_PLATFORM_ENABLED:feature==='creator'?process.env.BESC_CREATOR_PLATFORM_ENABLED:feature==='partner'?process.env.BESC_PARTNER_PLATFORM_ENABLED:process.env.BESC_PLATFORM_INTAKE_ENABLED)!=='true'||process.env.BESC_WEBSITE_STAGING_ENABLED!=='true')throw new ContentFailure(503);
- const origin=new URL(process.env.BESC_CC_URL??'https://cc-dev.belgianstreamerscommunity.be');
- if(origin.origin!=='https://cc-dev.belgianstreamerscommunity.be'||origin.username||origin.password||origin.protocol!=='https:')throw new ContentFailure(503);
+ let origin:URL;try{origin=new URL(commandCenterOrigin(process.env));}catch{throw new ContentFailure(503);}
  const key=process.env.BESC_PUBLICATION_KEY;if(!key||key.length<32)throw new ContentFailure(503);
  const signal=AbortSignal.timeout(5000),token=await viewerToken(signal);let response:Response;
  try{response=await fetch(new URL('/api/v1/platform/'+path,origin),{method:body?'POST':'GET',headers:{Authorization:'Bearer '+token,'X-BESC-Publication-Key':key,...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined,cache:'no-store',redirect:'error',signal});}catch{throw new ContentFailure(503);}

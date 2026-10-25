@@ -1,3 +1,4 @@
+import {websiteOrigin} from './deployment-config';
 import 'server-only';
 import {createServerClient} from '@supabase/ssr';
 import {cookies} from 'next/headers';
@@ -11,4 +12,4 @@ export async function viewerToken(signal?:AbortSignal){
  const db=await authClient(signal);const {data,error}=await db.auth.getUser();if(error||!data.user||data.user.is_anonymous)redirect('/login');
  const {data:session}=await db.auth.getSession();if(!session.session?.access_token)redirect('/login');return session.session.access_token;
 }
-export function websiteUrl(){const url=new URL(process.env.BESC_WEBSITE_URL??'https://website-dev.belgianstreamerscommunity.be');if(url.origin!=='https://website-dev.belgianstreamerscommunity.be'&&!(process.env.NODE_ENV!=='production'&&url.hostname==='localhost'))throw Error('invalid_site_origin');return url.origin;}
+export function websiteUrl(){return websiteOrigin(process.env);}
