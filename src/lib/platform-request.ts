@@ -1,8 +1,17 @@
-import {commandCenterOrigin} from './deployment-config';
+import {commandCenterOrigin,publicWebsiteEnabled} from './deployment-config';
+import {publicRequest,PublicReadFailure} from './public-request';
 import 'server-only';
 import {viewerToken} from './auth';
 import {ContentFailure} from './content';
 export async function platformRequest(path:string,body?:unknown,feature:'creator'|'intake'|'partner'|'vacancy'|'delegation'|'page'|'redirect'='creator'){
+ let open=false;try{open=publicWebsiteEnabled(process.env);}catch{throw new ContentFailure(503);}
+ if(open){
+  if(body!==undefined||feature!=='page'||process.env.BESC_SITE_PAGES_ENABLED!=='true')throw new ContentFailure(404);
+  const match=/^publications\/pages(?:\/([a-z0-9]+(?:-[a-z0-9]+)*))?(\?[^#]*)?$/.exec(path);
+  const media=/^publications\/pages\/media\/([a-f0-9-]{36})$/.exec(path);
+  if(!match&&!media)throw new ContentFailure(404);
+  try{return await publicRequest(media?'media/'+media[1]:'pages'+(match![1]?'/'+match![1]:''),media?'':match![2]??'');}catch(e){throw new ContentFailure(e instanceof PublicReadFailure?e.status:503);}
+ }
  if((feature==='page'?process.env.BESC_SITE_PAGES_ENABLED:feature==='redirect'?process.env.BESC_SITE_REDIRECTS_ENABLED:feature==='delegation'?process.env.BESC_PARTNER_DELEGATION_ENABLED:feature==='vacancy'?process.env.BESC_VACANCY_PLATFORM_ENABLED:feature==='creator'?process.env.BESC_CREATOR_PLATFORM_ENABLED:feature==='partner'?process.env.BESC_PARTNER_PLATFORM_ENABLED:process.env.BESC_PLATFORM_INTAKE_ENABLED)!=='true'||process.env.BESC_WEBSITE_STAGING_ENABLED!=='true')throw new ContentFailure(503);
  let origin:URL;try{origin=new URL(commandCenterOrigin(process.env));}catch{throw new ContentFailure(503);}
  const key=process.env.BESC_PUBLICATION_KEY;if(!key||key.length<32)throw new ContentFailure(503);
