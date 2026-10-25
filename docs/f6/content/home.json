@@ -1,0 +1,22 @@
+{
+  "slug": "home",
+  "locale": "nl-BE",
+  "title": "Belgian Streamers Community",
+  "summary": "BESC brengt Belgische gamers, streamers en content creators samen.",
+  "body": {
+    "format": "plain_text",
+    "value": "BESC brengt Belgische gamers, streamers en content creators samen. Een plek om elkaar te leren kennen, ervaringen uit te wisselen en samen content te maken.\n\nOntdek het nieuws uit onze community en bekijk onze evenementen."
+  },
+  "navigation": false,
+  "links": [
+    {
+      "label": "Nieuws bekijken",
+      "href": "/nieuws"
+    },
+    {
+      "label": "Events bekijken",
+      "href": "/events"
+    }
+  ],
+  "hero": null
+}

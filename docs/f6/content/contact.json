@@ -1,0 +1,13 @@
+{
+  "slug": "contact",
+  "locale": "nl-BE",
+  "title": "Contact met BESC",
+  "summary": "Neem contact op met Belgian Streamers Community.",
+  "body": {
+    "format": "plain_text",
+    "value": "Heb je een vraag voor Belgian Streamers Community? Mail naar info@belgianstreamerscommunity.be."
+  },
+  "navigation": true,
+  "links": [],
+  "hero": null
+}
