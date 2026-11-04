@@ -1,7 +1,7 @@
 import {z} from 'zod';
 const uuid=z.string().uuid(),at=z.string().datetime({offset:true}),hash=z.string().regex(/^[a-f0-9]{64}$/),text=(n:number)=>z.string().trim().min(1).max(n);
 export const contentLocales=['nl-BE','fr-BE','en'] as const;
-export const reservedPageSlugs=['api','auth','login','logout','events','nieuws','creators','samenwerkingen','esports','vrijwilligers','mijn-besc','media','creator-media','partner-media','page-media','robots','favicon','_next'];
+export const reservedPageSlugs=['api','auth','login','logout','events','nieuws','creators','samenwerkingen','esports','vrijwilligers','mijn-besc','media','creator-media','partner-media','page-media','robots','sitemap','favicon','_next'];
 const slug=text(160).regex(/^[a-z0-9]+(-[a-z0-9]+)*$/).refine(s=>!reservedPageSlugs.includes(s));
 export function safeContentTarget(p:string){return p.length<=600&&/^\/(?:[a-z0-9]+(?:-[a-z0-9]+)*(?:\/[a-z0-9]+(?:-[a-z0-9]+)*)*)?(?:\?locale=(?:nl-BE|fr-BE|en))?$/.test(p)&&!/^\/(api|auth|login|logout|media|creator-media|partner-media|page-media|_next)(\/|\?|$)/.test(p);}
 export function safeLegacyPath(p:string){return p.length<=2000&&p.startsWith('/')&&!p.startsWith('//')&&!/[\\?#\u0000-\u0020]/.test(p)&&!/%(?:2e|2f|5c|25)/i.test(p)&&!/(?:^|\/)\.{1,2}(?:\/|$)/.test(p)&&!/%(?![a-f0-9]{2})/i.test(p);}
@@ -29,4 +29,4 @@ export type PagePayload=z.infer<typeof pagePayloadSchema>;
 export type RedirectPayload=z.infer<typeof redirectPayloadSchema>;
 
 export const pageNavigationSchema=z.object({schema_version:z.literal('besc-page-navigation-v1'),items:z.array(z.object({public_id:uuid,slug,locale:z.enum(contentLocales),title:text(240),revision:z.number().int().positive()}).strict()).max(50)}).strict();
-export function legacyRuntimePath(p:string){return safeLegacyPath(p)&&p!=='/'&&!/^\/(api|auth|login|logout|contact|events|nieuws|creators|samenwerkingen|esports|vrijwilligers|mijn-besc|media|creator-media|partner-media|page-media|assets|robots\.txt|favicon\.ico|_next)(\/|$)/.test(p);}
+export function legacyRuntimePath(p:string){return safeLegacyPath(p)&&p!=='/'&&!/^\/(api|auth|login|logout|contact|events|nieuws|creators|samenwerkingen|esports|vrijwilligers|mijn-besc|media|creator-media|partner-media|page-media|assets|robots\.txt|sitemap\.xml|favicon\.ico|_next)(\/|$)/.test(p);}

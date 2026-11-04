@@ -1,3 +1,4 @@
+import {publicMetadata} from '@/lib/seo';
 import {PageContent} from '@/components/page-content';
 import {Shell} from '@/components/shell';
 import {SitePageView} from '@/components/site-page-view';
@@ -12,3 +13,5 @@ export default async function Page(){
  catch(e){if(!(e instanceof ContentFailure))throw e;return <Shell><meta name="robots" content="noindex, nofollow"/><section className="state"><h1>Home is momenteel niet beschikbaar</h1><p>De actuele vrijgegeven inhoud kon niet worden bevestigd.</p></section></Shell>;}
  return <Shell><SitePageView initial={data} path="pages/home" query="?locale=nl-BE"/></Shell>;
 }
+
+export async function generateMetadata(){return publicMetadata('/');}
