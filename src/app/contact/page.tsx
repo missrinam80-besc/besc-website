@@ -1,3 +1,4 @@
+import {publicMetadata} from '@/lib/seo';
 import {releasePreviewEnabled,publicWebsiteEnabled} from '@/lib/deployment-config';
 import {notFound} from 'next/navigation';
 import {Shell} from '@/components/shell';
@@ -12,3 +13,5 @@ export default async function Page({searchParams}:{searchParams:Promise<{locale?
  if(process.env.BESC_SITE_PAGES_ENABLED!=='true')notFound();let data;try{data=await pages('pages/contact',query);}catch(e){if(!(e instanceof ContentFailure))throw e;if(e.status===404)notFound();return <Shell><meta name="robots" content="noindex, nofollow"/><h1>Contact is momenteel niet beschikbaar</h1></Shell>;}
  return <Shell><SitePageView initial={data} path="pages/contact" query={query}/></Shell>;
 }
+
+export async function generateMetadata({searchParams}:{searchParams:Promise<{locale?:string}>}){return publicMetadata('/contact',await searchParams);}

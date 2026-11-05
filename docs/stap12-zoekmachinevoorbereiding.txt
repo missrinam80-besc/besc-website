@@ -1,0 +1,31 @@
+STAP 12 - ZOEKMACHINEVOORBEREIDING
+
+Scope: basiswebsite; alle nieuwe code lokaal, nog niet uitgerold.
+Besluiten Linda: overige oude inhoud alleen als bron bewaren; geen bezoekersmeting.
+27 historische blogconcepten bestaan in CC Content. Dit zijn geen websitepublicaties.
+
+Gedrag
+- DEV en standaardconfiguratie: noindex; robots weigert alle crawling; lege sitemap.
+- Alleen een apart vrijgegeven productieomgeving met expliciete indexeringsschakelaar kan canonicals en een sitemap krijgen.
+- Canonicals gebruiken uitsluitend de goedgekeurde website-origin en de actuele publieke CC-leesroute. Geen request-host, oude Blogger-host of concepten.
+- Alleen Home, Over BESC, Contact, eventueel later afzonderlijk vrijgegeven Privacy, Nieuws, Events en vrijgegeven nieuws-/eventdetails vallen binnen de leesgrens.
+- Basisinhoud moet daadwerkelijk publiek vrijgegeven zijn. Geen sitemapvermelding van lege of niet-vrijgegeven paginaconcepten.
+- Nieuws/Events mogen lege overzichten zijn; er worden geen voorbeeldberichten aangemaakt.
+- Alleen nl-BE. Vertalingen krijgen pas eigen zoekmachine-inrichting wanneer ze werkelijk gebouwd en vrijgegeven zijn. Cursorpagina's blijven noindex.
+- Paginering: maximaal 20 bronpagina's per inhoudstype. Fout, herhaalde cursor of onvolledige bron: lege sitemap; geen gedeeltelijke of oude kopie.
+- Geen lastModified-claims uit historische brondata; geen analytics of externe trackingcode toegevoegd.
+- sitemap is gereserveerd en valt buiten de oude redirectresolver.
+
+Het oude algemene noindex-header in next.config wordt vervangen door de reeds aanwezige runtimecontrole in proxy.ts. Zo blijft DEV noindex en wordt een latere expliciete productievrijgave niet alsnog door een oude statische header geblokkeerd. Private en onbekende routes behouden noindex.
+
+Resterend voor uitvoering
+- Review, merge en afzonderlijke website-uitrol.
+- Publieke revisies, mediarechten en toekomstige productiehosts afzonderlijk vrijgeven.
+- Privacy blijft op verzoek uitgesteld; er wordt geen privacybeleid aangenomen door deze code.
+- Oude bronnen, formulieren, redirects en domeinen blijven onaangeroerd. Geen automatische import van persoonlijke formulierantwoorden.
+- Productiecontrole volgt zodra productie bestaat; dit pakket is geen productieacceptatie.
+
+Gerichte verificatie: 19 lokale gevallen voor openbare leesgrens, bronselectie, sitemap, canonicals en runtimeheaders; typecontrole en productiebuild. Geen uitgebreide appacceptatie.
+Bron voor Next.js metadata-interface: https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+
+Broncodebasis: lokale 7da153a en remote main 68d7da1 hebben dezelfde boom 3b54167b49e725e8b6af4033eb8b3c315adfe1d1, gecontroleerd op 4 november 2026. GitHub CLI werkte voor alleenlezende verificatie; git-fetch kon certificaat-/Windows-referenties niet laden. Er is geen certificaatcontrole uitgeschakeld.

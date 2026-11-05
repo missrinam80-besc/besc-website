@@ -1,3 +1,4 @@
+import {publicMetadata} from '@/lib/seo';
 import {notFound} from 'next/navigation';
 import {Shell} from '@/components/shell';
 import {SitePageView} from '@/components/site-page-view';
@@ -9,3 +10,5 @@ export default async function Page({params,searchParams}:{params:Promise<{path:s
  try{data=await pages('pages/'+path[0],query);}catch(e){if(!(e instanceof ContentFailure))throw e;if(e.status===404)notFound();return <Shell><meta name="robots" content="noindex, nofollow"/><section className="state"><h1>Deze pagina is nu niet beschikbaar</h1><p>De actuele inhoud en toegang konden niet worden bevestigd.</p></section></Shell>;}
  return <Shell><SitePageView initial={data} path={'pages/'+path[0]} query={query}/></Shell>;
 }
+
+export async function generateMetadata({params,searchParams}:{params:Promise<{path:string[]}>;searchParams:Promise<{locale?:string}>}){return publicMetadata('/'+(await params).path.join('/'),await searchParams);}
